@@ -6,8 +6,8 @@
 package project252;
 
 public class Home extends javax.swing.JFrame {
+
     static CookiesFactory cookiesFactory = new CookiesFactory();
-    Project252 p = new Project252();
 
     public Home() {
         initComponents();
@@ -108,9 +108,14 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Cart Cart = new Cart();
         CartGUI c = new CartGUI();
+        for (int i = 0; i < Cart.getCookie().size(); i++) {
+            c.jTextArea1.setText(Cart.getCookie().get(i).getType() + Cart.getCookie().get(i).getPrice());
+        }
         c.show();
         this.show(false);
+
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -121,21 +126,21 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_ChocolateChipActionPerformed
 
     private void PinkVelvetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PinkVelvetActionPerformed
-       PinkVelvetGUI p = new PinkVelvetGUI();
+        PinkVelvetGUI p = new PinkVelvetGUI();
         p.show();
         this.show(false);
     }//GEN-LAST:event_PinkVelvetActionPerformed
 
     private void SunnyDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SunnyDayActionPerformed
-         SunnyDayGUI s = new SunnyDayGUI();
+        SunnyDayGUI s = new SunnyDayGUI();
         s.show();
         this.show(false);
     }//GEN-LAST:event_SunnyDayActionPerformed
 
     private void BirthdayCakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BirthdayCakeActionPerformed
-         BirthdayCakeGUI b = new BirthdayCakeGUI();
-         b.show();
-         this.show(false);
+        BirthdayCakeGUI b = new BirthdayCakeGUI();
+        b.show();
+        this.show(false);
     }//GEN-LAST:event_BirthdayCakeActionPerformed
 
     public static void main(String args[]) {

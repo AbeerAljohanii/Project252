@@ -75,11 +75,10 @@ public class Payment extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PayPalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayPalActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_PayPalActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-           
+
         if (CreditCard.isSelected()) {
             CreditCardGUI card = new CreditCardGUI();
             card.show();
@@ -89,7 +88,6 @@ public class Payment extends javax.swing.JFrame {
             paypal.show();
             this.show(false);
         }
-        //Context context = new Context(new CreditCard());
 
 
     }//GEN-LAST:event_jButton1ActionPerformed

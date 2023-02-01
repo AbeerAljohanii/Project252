@@ -7,8 +7,13 @@ public class PinkVelvet extends Cookies {
     public PinkVelvet(Extra extra) {
         super("Pink Velvet with "+ extra.getextra(), 6.99 + extra.getprice(), extra);
     }
-    @Override
-    void getInfo() {
-        String s = getType() + " : " + getPrice() + extra.extra();
-    }
+//  @Override
+//    String information() {
+//        if (this.extra == null) {
+//            return getType() + " " + getPrice();
+//        } else {
+//            return getType() + " " + extra.getextra() + " = " + getPrice();
+//
+//        }
+//    }
 }

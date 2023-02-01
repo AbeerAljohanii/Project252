@@ -16,25 +16,17 @@ public class CartGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setMinimumSize(new java.awt.Dimension(1400, 1030));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton1.setBackground(new java.awt.Color(255, 218, 218));
-        jButton1.setFont(new java.awt.Font("Bell MT", 1, 36)); // NOI18N
-        jButton1.setText("apply");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 390, 120, 60));
-
-        jTextField1.setFont(new java.awt.Font("Bell MT", 0, 24)); // NOI18N
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 400, 160, 40));
 
         jButton2.setBackground(new java.awt.Color(255, 218, 218));
         jButton2.setFont(new java.awt.Font("Bell MT", 1, 24)); // NOI18N
@@ -62,6 +54,12 @@ public class CartGUI extends javax.swing.JFrame {
         });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 100, 90));
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 640, 600));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Cart.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -80,7 +78,7 @@ public class CartGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      
+
         Payment p = new Payment();
         p.show();
         this.show(false);
@@ -96,10 +94,6 @@ public class CartGUI extends javax.swing.JFrame {
         login l = new login();
         l.show();
     }//GEN-LAST:event_jButton4ActionPerformed
-
-    public void info(double total) {
-
-    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -135,12 +129,12 @@ public class CartGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
