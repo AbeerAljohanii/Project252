@@ -108,6 +108,7 @@ public class login extends javax.swing.JFrame {
             if (num) {
                 Home h = new Home();
                 h.show();
+                this.show(false);
             } else {
                 JOptionPane.showMessageDialog(null, "Sorry we could not find yout account");
             }

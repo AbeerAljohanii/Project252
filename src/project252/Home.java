@@ -104,18 +104,16 @@ public class Home extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         login l = new login();
         l.show();
-
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Cart Cart = new Cart();
         CartGUI c = new CartGUI();
         for (int i = 0; i < Cart.getCookie().size(); i++) {
-            c.jTextArea1.setText(Cart.getCookie().get(i).getType() + Cart.getCookie().get(i).getPrice());
+            c.jTextArea1.append(Cart.getCookie().get(i).getType()+ Cart.getCookie().get(i).getPrice()  +"\n");
         }
         c.show();
         this.show(false);
-
 
     }//GEN-LAST:event_jButton3ActionPerformed
 

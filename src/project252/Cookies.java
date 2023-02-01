@@ -5,7 +5,6 @@ public abstract class Cookies {
     private String type;
     private double price;
     protected Extra extra;
-
     public Cookies(String type, double price) {
         this.type = type;
         this.price = price;
