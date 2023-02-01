@@ -38,7 +38,7 @@ public class Project252 {
         l.getcheck(check);
         input.close();
     }
-    void cookies(int count, String type) {
+    void cookies(int count, String type , Extra extra) {
             switch (type) {
                 case "Chocolate chip":
                     cookie.add(cookeisF.getCookies("Chocolate chip"));
@@ -53,6 +53,7 @@ public class Project252 {
                     index++;
                     break;
                 case "Birthday Cake":
+                    
                     cookie.add(cookeisF.getCookies("Birthday Cake"));
                     index++;
                     break;

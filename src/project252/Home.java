@@ -53,14 +53,29 @@ public class Home extends javax.swing.JFrame {
 
         ChocolateChip.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/chocolate chip.png"))); // NOI18N
         ChocolateChip.setText("jButton2");
+        ChocolateChip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChocolateChipActionPerformed(evt);
+            }
+        });
         jPanel1.add(ChocolateChip, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 340, 390));
 
         BirthdayCake.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/BirthdayCake.png"))); // NOI18N
         BirthdayCake.setText("jButton2");
+        BirthdayCake.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BirthdayCakeActionPerformed(evt);
+            }
+        });
         jPanel1.add(BirthdayCake, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 620, 330, 380));
 
         SunnyDay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/SunnyDay.png"))); // NOI18N
         SunnyDay.setText("jButton2");
+        SunnyDay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SunnyDayActionPerformed(evt);
+            }
+        });
         jPanel1.add(SunnyDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 640, 340, 370));
 
         backgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/backgound.png"))); // NOI18N
@@ -94,6 +109,24 @@ public class Home extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void ChocolateChipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChocolateChipActionPerformed
+        ChocolateChipGUI ch = new ChocolateChipGUI();
+        ch.show();
+        this.show(false);
+    }//GEN-LAST:event_ChocolateChipActionPerformed
+
+    private void BirthdayCakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BirthdayCakeActionPerformed
+        BirthdayCakeGUI b = new BirthdayCakeGUI();
+        b.show();
+        this.show(false);
+    }//GEN-LAST:event_BirthdayCakeActionPerformed
+
+    private void SunnyDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SunnyDayActionPerformed
+        SunnyDayGUI s = new SunnyDayGUI();
+        s.show();
+        this.show(false);
+    }//GEN-LAST:event_SunnyDayActionPerformed
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

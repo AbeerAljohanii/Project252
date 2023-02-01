@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package project252;
 
 import java.util.ArrayList;
@@ -27,8 +23,8 @@ public class Cart {
       cookie.add(c);
     }
     
-    Cookies typeOfCookies(String type){
-        return factory.getCookies(type);
+    Cookies typeOfCookies(String type ){
+        return factory.getCookies(type );
     }  
 
 }

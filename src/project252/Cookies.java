@@ -3,7 +3,7 @@ package project252;
 public abstract class Cookies {
     private String type;
     private double price;
-    protected Extra extra;
+    protected Extra extra; 
     abstract void getInfo();
     public Cookies(String type, double price) {
         this.type = type;
