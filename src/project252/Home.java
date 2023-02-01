@@ -55,7 +55,7 @@ public class Home extends javax.swing.JFrame {
         ChocolateChip.setText("jButton2");
         jPanel1.add(ChocolateChip, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 340, 390));
 
-        BirthdayCake.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project252/BirthdayCake.png"))); // NOI18N
+        BirthdayCake.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/BirthdayCake.png"))); // NOI18N
         BirthdayCake.setText("jButton2");
         jPanel1.add(BirthdayCake, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 620, 330, 380));
 
@@ -63,7 +63,7 @@ public class Home extends javax.swing.JFrame {
         SunnyDay.setText("jButton2");
         jPanel1.add(SunnyDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 640, 340, 370));
 
-        backgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project252/backgound.png"))); // NOI18N
+        backgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/backgound.png"))); // NOI18N
         backgound.setText("jLabel2");
         jPanel1.add(backgound, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 1020));
 

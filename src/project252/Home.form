@@ -103,7 +103,7 @@
         <Component class="javax.swing.JButton" name="BirthdayCake">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/project252/BirthdayCake.png"/>
+              <Image iconType="3" name="/picture/BirthdayCake.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton2"/>
           </Properties>
@@ -129,7 +129,7 @@
         <Component class="javax.swing.JLabel" name="backgound">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/project252/backgound.png"/>
+              <Image iconType="3" name="/picture/backgound.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel2"/>
           </Properties>
