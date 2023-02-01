@@ -34,49 +34,51 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
         without = new javax.swing.JRadioButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        chocolateChipBackgound = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("add");
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jButton1.setText("ADD");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 510, 160, 60));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 850, 160, 60));
 
         buttonGroup1.add(Dark);
-        Dark.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Dark.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         Dark.setText("Extra Dark Chocolate");
         Dark.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DarkActionPerformed(evt);
             }
         });
-        jPanel1.add(Dark, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, -1, -1));
+        jPanel1.add(Dark, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 590, -1, -1));
 
         buttonGroup1.add(white);
-        white.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        white.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         white.setText("Extra White Chocolate");
         white.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 whiteActionPerformed(evt);
             }
         });
-        jPanel1.add(white, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, -1, -1));
+        jPanel1.add(white, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 720, -1, -1));
 
         buttonGroup1.add(without);
-        without.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        without.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         without.setText("Without extra");
         without.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 withoutActionPerformed(evt);
             }
         });
-        jPanel1.add(without, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, -1, -1));
+        jPanel1.add(without, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 450, -1, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/signout.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +86,7 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 80));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 90, 80));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/shopping cart.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -92,19 +94,23 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 10, 100, 70));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 30, 100, 70));
+
+        chocolateChipBackgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/chocolate chip backgound.png"))); // NOI18N
+        chocolateChipBackgound.setText("jLabel1");
+        jPanel1.add(chocolateChipBackgound, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 940));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 949, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 3, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 679, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 944, Short.MAX_VALUE)
         );
 
         pack();
@@ -187,6 +193,7 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton Dark;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel chocolateChipBackgound;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

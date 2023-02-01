@@ -35,6 +35,7 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        pinkVelvetBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,28 +43,33 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttonGroup1.add(without);
+        without.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         without.setText("Without extra");
         without.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 withoutActionPerformed(evt);
             }
         });
-        jPanel1.add(without, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, -1, -1));
+        jPanel1.add(without, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 460, -1, -1));
 
         buttonGroup1.add(Dark);
+        Dark.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         Dark.setText("Extra Dark Chocolate");
-        jPanel1.add(Dark, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, -1, -1));
+        jPanel1.add(Dark, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 590, -1, 60));
 
         buttonGroup1.add(white);
+        white.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         white.setText("Extra White Chocolate");
-        jPanel1.add(white, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, -1, -1));
+        jPanel1.add(white, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 730, -1, -1));
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jButton1.setText("ADD");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 170, 50));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 850, 240, 80));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/signout.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -79,13 +85,17 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 20, 100, 80));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 20, 100, 80));
+
+        pinkVelvetBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/pink velvet backgound.png"))); // NOI18N
+        pinkVelvetBackground.setText("jLabel1");
+        jPanel1.add(pinkVelvetBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 950));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,6 +179,7 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel pinkVelvetBackground;
     private javax.swing.JRadioButton white;
     private javax.swing.JRadioButton without;
     // End of variables declaration//GEN-END:variables

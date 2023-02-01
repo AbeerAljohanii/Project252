@@ -35,6 +35,7 @@ public class SunnyDayGUI extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        SunnyDayBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,28 +43,33 @@ public class SunnyDayGUI extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttonGroup1.add(without);
+        without.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         without.setText("Without extra");
         without.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 withoutActionPerformed(evt);
             }
         });
-        jPanel1.add(without, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, -1, -1));
+        jPanel1.add(without, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 460, -1, -1));
 
         buttonGroup1.add(Dark);
+        Dark.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         Dark.setText("Extra Dark Chocolate");
-        jPanel1.add(Dark, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, -1, -1));
+        jPanel1.add(Dark, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 600, -1, -1));
 
         buttonGroup1.add(white);
+        white.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         white.setText("Extra White Chocolate");
-        jPanel1.add(white, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, -1, -1));
+        jPanel1.add(white, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 740, -1, -1));
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jButton1.setText("ADD");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 430, 170, 50));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 860, 190, 60));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/signout.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -79,17 +85,21 @@ public class SunnyDayGUI extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 100, 80));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 20, 100, 80));
+
+        SunnyDayBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/sunny day backgound.png"))); // NOI18N
+        SunnyDayBackground.setText("jLabel1");
+        jPanel1.add(SunnyDayBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 960));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1470, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
         );
 
         pack();
@@ -162,6 +172,7 @@ public class SunnyDayGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton Dark;
+    private javax.swing.JLabel SunnyDayBackground;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

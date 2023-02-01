@@ -29,36 +29,18 @@ public class BirthdayCakeGUI extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
         without = new javax.swing.JRadioButton();
         Dark = new javax.swing.JRadioButton();
         white = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        BirthdayCakeBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        buttonGroup1.add(without);
-        without.setText("Without extra");
-        jPanel1.add(without, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, -1, -1));
-
-        buttonGroup1.add(Dark);
-        Dark.setText("Extra Dark Chocolate");
-        jPanel1.add(Dark, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, -1, -1));
-
-        buttonGroup1.add(white);
-        white.setText("Extra White Chocolate");
-        jPanel1.add(white, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, -1, -1));
-
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 170, 70));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/signout.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -68,23 +50,56 @@ public class BirthdayCakeGUI extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, 70));
 
+        buttonGroup1.add(without);
+        without.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        without.setText("Without extra");
+        jPanel1.add(without, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 460, -1, -1));
+
+        buttonGroup1.add(Dark);
+        Dark.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        Dark.setText("Extra Dark Chocolate");
+        jPanel1.add(Dark, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 600, -1, -1));
+
+        buttonGroup1.add(white);
+        white.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        white.setText("Extra White Chocolate");
+        jPanel1.add(white, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 740, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(255, 218, 218));
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jButton1.setText("ADD");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 860, 170, 70));
+
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/home.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 90, 70));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 20, 90, 70));
+
+        BirthdayCakeBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/birthday cake backgound.png"))); // NOI18N
+        BirthdayCakeBackground.setText("jLabel1");
+        jPanel1.add(BirthdayCakeBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 1440, 1000));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -154,6 +169,7 @@ public class BirthdayCakeGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BirthdayCakeBackground;
     private javax.swing.JRadioButton Dark;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
