@@ -31,7 +31,7 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         without = new javax.swing.JRadioButton();
         Dark = new javax.swing.JRadioButton();
-        White = new javax.swing.JRadioButton();
+        white = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -54,9 +54,9 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
         Dark.setText("Extra Dark Chocolate");
         jPanel1.add(Dark, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, -1, -1));
 
-        buttonGroup1.add(White);
-        White.setText("Extra White Chocolate");
-        jPanel1.add(White, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, -1, -1));
+        buttonGroup1.add(white);
+        white.setText("Extra White Chocolate");
+        jPanel1.add(white, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, -1, -1));
 
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,11 +116,11 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         if (without.isSelected()) {
-            Cart.addarray(new PinkVelvet());
-        } else if (White.isSelected()) {
-            Cart.addarray(new PinkVelvet(new WhiteChocolate()));
+            Cart.addarray(Home.cookiesFactory.getCookies("Pink Velvet"));
+        } else if (white.isSelected()) {
+            Cart.addarray(Home.cookiesFactory.getCookies("Pink Velvet with extra white"));
         } else {
-            Cart.addarray(new PinkVelvet(new DarkChocolate()));
+            Cart.addarray(Home.cookiesFactory.getCookies("Pink Velvet with extra dark"));
         }
         Home h = new Home();
         h.show(true);
@@ -164,12 +164,12 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton Dark;
-    private javax.swing.JRadioButton White;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton white;
     private javax.swing.JRadioButton without;
     // End of variables declaration//GEN-END:variables
 }

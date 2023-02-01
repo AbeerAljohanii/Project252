@@ -92,12 +92,12 @@ public class BirthdayCakeGUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        if (without.isSelected()) {
-            Cart.addarray(new BirthdayCake());
+         if (without.isSelected()) {
+            Cart.addarray(Home.cookiesFactory.getCookies("Birthday Cake"));
         } else if (white.isSelected()) {
-            Cart.addarray(new BirthdayCake(new WhiteChocolate()));
+            Cart.addarray(Home.cookiesFactory.getCookies("Birthday Cake with extra white"));
         } else {
-            Cart.addarray(new BirthdayCake(new DarkChocolate()));
+            Cart.addarray(Home.cookiesFactory.getCookies("Birthday Cake with extra dark"));
         }
         Home h = new Home();
         h.show(true);

@@ -49,21 +49,41 @@ public class Home extends javax.swing.JFrame {
 
         PinkVelvet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/pinkVelvet.png"))); // NOI18N
         PinkVelvet.setText("jButton2");
+        PinkVelvet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PinkVelvetActionPerformed(evt);
+            }
+        });
         jPanel1.add(PinkVelvet, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 220, 330, 380));
 
         ChocolateChip.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/chocolate chip.png"))); // NOI18N
         ChocolateChip.setText("jButton2");
+        ChocolateChip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChocolateChipActionPerformed(evt);
+            }
+        });
         jPanel1.add(ChocolateChip, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 340, 390));
 
-        BirthdayCake.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project252/BirthdayCake.png"))); // NOI18N
+        BirthdayCake.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/BirthdayCake.png"))); // NOI18N
         BirthdayCake.setText("jButton2");
+        BirthdayCake.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BirthdayCakeActionPerformed(evt);
+            }
+        });
         jPanel1.add(BirthdayCake, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 620, 330, 380));
 
         SunnyDay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/SunnyDay.png"))); // NOI18N
         SunnyDay.setText("jButton2");
+        SunnyDay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SunnyDayActionPerformed(evt);
+            }
+        });
         jPanel1.add(SunnyDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 640, 340, 370));
 
-        backgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project252/backgound.png"))); // NOI18N
+        backgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/backgound.png"))); // NOI18N
         backgound.setText("jLabel2");
         jPanel1.add(backgound, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 1020));
 
@@ -93,6 +113,30 @@ public class Home extends javax.swing.JFrame {
         this.show(false);
 
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void ChocolateChipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChocolateChipActionPerformed
+        ChocolateChipGUI c = new ChocolateChipGUI();
+        c.show();
+        this.show(false);
+    }//GEN-LAST:event_ChocolateChipActionPerformed
+
+    private void PinkVelvetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PinkVelvetActionPerformed
+       PinkVelvetGUI p = new PinkVelvetGUI();
+        p.show();
+        this.show(false);
+    }//GEN-LAST:event_PinkVelvetActionPerformed
+
+    private void SunnyDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SunnyDayActionPerformed
+         SunnyDayGUI s = new SunnyDayGUI();
+        s.show();
+        this.show(false);
+    }//GEN-LAST:event_SunnyDayActionPerformed
+
+    private void BirthdayCakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BirthdayCakeActionPerformed
+         BirthdayCakeGUI b = new BirthdayCakeGUI();
+         b.show();
+         this.show(false);
+    }//GEN-LAST:event_BirthdayCakeActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

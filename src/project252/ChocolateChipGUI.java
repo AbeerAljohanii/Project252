@@ -113,11 +113,11 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         if (without.isSelected()) {
-            Cart.addarray(new ChocolateChip());
+            Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip"));
         } else if (white.isSelected()) {
-            Cart.addarray(new ChocolateChip(new WhiteChocolate()));
+            Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip with extra white"));
         } else {
-            Cart.addarray(new ChocolateChip(new DarkChocolate()));
+            Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip with extra dark"));
         }
         Home h = new Home();
         h.show(true);
