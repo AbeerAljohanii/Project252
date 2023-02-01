@@ -13,9 +13,6 @@ public class PayPal implements PayStrategy {
     static private String Email;
     static private String password;
 
-    public PayPal() {
-    }
-
     public PayPal(String Email, String password) {
         this.Email = Email;
         this.password = password;
@@ -27,7 +24,7 @@ public class PayPal implements PayStrategy {
     @Override
     public String pay(double paymentAmount) {
         add();
-        if(CreditInfor.containsValue(Email) && CreditInfor.containsValue(password)){
+        if(CreditInfor.containsKey(Email) && CreditInfor.containsValue(password)){
             return "Paying " + paymentAmount+ " using PayPal successfully";
         } else{
             return null;
