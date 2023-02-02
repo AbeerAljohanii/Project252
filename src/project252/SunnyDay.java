@@ -10,10 +10,11 @@ public class SunnyDay extends Cookies {
  
   @Override
     String information() {
+   
         if (this.extra == null) {
-            return getType() + " " + getPrice();
+             return String.format("%-53s %10.2f\n", getType(), getPrice());
         } else {
-            return getType() + " " + extra.getextra() + " = " + getPrice();
+            return String.format("%-15s %10.2f\n", getType()+" "+extra.getextra(), getPrice());
 
         }
     }

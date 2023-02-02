@@ -109,8 +109,10 @@ public class Home extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Cart cart = new Cart();
         CartGUI c = new CartGUI();
+        c.jTextArea1.setText("");
+        c.jTextArea1.append(String.format("%-65s %15s \n", "Item", "Price"));
         for (int i = 0; i < cart.getCookie().size(); i++) {
-           c.jTextArea1.append(cart.getCookie().get(i).information()+"\n");
+           c.jTextArea1.append("\n"+cart.getCookie().get(i).information());
          
         }  
         c.show();

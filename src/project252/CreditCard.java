@@ -21,7 +21,7 @@ public class CreditCard implements PayStrategy {
         this.number = number;
         this.Date = Date;
         this.CVV = CVV;
-        double amount = 400;
+        amount = 400;
     }
     @Override
     public String pay(double paymentAmount) {
