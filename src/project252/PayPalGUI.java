@@ -74,17 +74,22 @@ public class PayPalGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        PayPal pay = new PayPal(Email.getText(), Password.getText());
+        PayPal pay = new PayPal(Email.getText().trim(), Password.getText().trim());
         Context context = new Context(pay);
         Confirmed c = new Confirmed();
+         
         if (context.ExecuteStrategy(Cart.getTotalPrice()) != null) {
-            c.show(true);
+            Cart.cookie.clear();
+            Cart.totalPrice = 0;
             this.show(false);
+            c.show(true);
         } else {
+
             JOptionPane.showMessageDialog(null, "Error");
             Payment p = new Payment();
             p.show();
             this.show(false);
+             
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -27,5 +27,6 @@ public abstract class Cookies {
     public Extra getExtra() {
         return extra;
     }
+   abstract   String information();
 
 }

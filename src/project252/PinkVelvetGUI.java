@@ -129,7 +129,7 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
             Cart.addarray(Home.cookiesFactory.getCookies("Pink Velvet"));
         } else if (white.isSelected()) {
             Cart.addarray(Home.cookiesFactory.getCookies("Pink Velvet with extra white"));
-        } else {
+        } else if (Dark.isSelected()){
             Cart.addarray(Home.cookiesFactory.getCookies("Pink Velvet with extra dark"));
         }
         Home h = new Home();

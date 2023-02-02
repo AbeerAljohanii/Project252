@@ -115,7 +115,7 @@ public class SunnyDayGUI extends javax.swing.JFrame {
             Cart.addarray(Home.cookiesFactory.getCookies("Sunny Day"));
         } else if (white.isSelected()) {
             Cart.addarray(Home.cookiesFactory.getCookies("Sunny Day with extra white"));
-        } else {
+        } else if (Dark.isSelected()){
             Cart.addarray(Home.cookiesFactory.getCookies("Sunny Day with extra dark"));
         }
         Home h = new Home();

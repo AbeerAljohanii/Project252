@@ -80,18 +80,21 @@ public class CreditCardGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         Context context = new Context(new CreditCard(Number.getText(), Date.getText(), CVV.getText()));
-        context.ExecuteStrategy(Cart.totalPrice);
+         Context context = new Context(new CreditCard(Number.getText().trim(), Date.getText().trim(), CVV.getText().trim()));
         Confirmed c = new Confirmed();
-        if (context.ExecuteStrategy(Cart.totalPrice) != null) {
+        if (context.ExecuteStrategy(Cart.getTotalPrice()) != null) {
+            Cart.cookie.clear(); 
+            Cart.totalPrice=0;
             c.show(true);
             this.show(false);
+            
         } else {
             JOptionPane.showMessageDialog(null, "Error");
             Payment p = new Payment();
             p.show();
             this.show(false);
         }
+  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

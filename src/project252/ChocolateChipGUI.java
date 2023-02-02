@@ -122,10 +122,10 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
             Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip"));
         } else if (white.isSelected()) {
             Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip with extra white"));
-        } else {
+        } else if (Dark.isSelected()){
             Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip with extra dark"));
         }
-        Home h = new Home();
+        Home h = new Home(); 
         h.show(true);
         this.show(false);
 

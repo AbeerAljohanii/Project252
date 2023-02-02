@@ -26,7 +26,8 @@ public class CreditCard implements PayStrategy {
     @Override
     public String pay(double paymentAmount) {
         if (paymentAmount <= amount) {
-            return "Paying " + paymentAmount+ " using CreditCard successfully";
+            amount -= paymentAmount;
+            return "Paying " + paymentAmount+ " using CreditCard successfully";    
         } else{
             return null;
         }

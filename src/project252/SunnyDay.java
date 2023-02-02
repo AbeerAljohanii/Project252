@@ -5,15 +5,16 @@ public class SunnyDay extends Cookies {
         super("Sunny Day", 4.99);
     }
     public SunnyDay(Extra extra) {
-        super("Sunny Day with "+ extra.getextra(), 4.99 + extra.getprice(), extra);
+        super("Sunny Day with ", 4.99 + extra.getprice(), extra);
     }
-//  @Override
-//    String information() {
-//        if (this.extra == null) {
-//            return getType() + " " + getPrice();
-//        } else {
-//            return getType() + " " + extra.getextra() + " = " + getPrice();
-//
-//        }
-//    }
+ 
+  @Override
+    String information() {
+        if (this.extra == null) {
+            return getType() + " " + getPrice();
+        } else {
+            return getType() + " " + extra.getextra() + " = " + getPrice();
+
+        }
+    }
 }

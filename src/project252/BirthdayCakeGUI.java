@@ -111,7 +111,7 @@ public class BirthdayCakeGUI extends javax.swing.JFrame {
             Cart.addarray(Home.cookiesFactory.getCookies("Birthday Cake"));
         } else if (white.isSelected()) {
             Cart.addarray(Home.cookiesFactory.getCookies("Birthday Cake with extra white"));
-        } else {
+        } else if (Dark.isSelected()){
             Cart.addarray(Home.cookiesFactory.getCookies("Birthday Cake with extra dark"));
         }
         Home h = new Home();

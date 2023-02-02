@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Cart {
     
     static ArrayList<Cookies> cookie = new ArrayList<>();
-    static double totalPrice;
+    static double totalPrice=0;
     CookiesFactory factory = new CookiesFactory();
     
     public ArrayList<Cookies> getCookie() {
@@ -18,13 +18,11 @@ public class Cart {
     }
 
     public static double getTotalPrice() {
-        for (int i = 0; i < cookie.size(); i++) {
-            totalPrice += cookie.get(i).getPrice();
-        }
         return totalPrice;
     }
     static void addarray(Cookies c){
       cookie.add(c);
+      totalPrice+=c.getPrice();
     }
     
     Cookies typeOfCookies(String type){

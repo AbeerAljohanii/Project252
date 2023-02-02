@@ -5,6 +5,8 @@
  */
 package project252;
 
+import javax.swing.JOptionPane;
+
 
 public class CartGUI extends javax.swing.JFrame {
 
@@ -46,7 +48,6 @@ public class CartGUI extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 30, 100, 90));
 
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ra52m\\Downloads\\signout2.png")); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -67,7 +68,7 @@ public class CartGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -78,10 +79,17 @@ public class CartGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if (Cart.totalPrice == 0) {
+            JOptionPane.showMessageDialog(null, "The cart is empty");
+            Home h = new Home();
+            h.show();
+            this.show(false);
+        } else {
+            Payment p = new Payment();
+            p.show();
+            this.show(false);
+        }
 
-        Payment p = new Payment();
-        p.show();
-        this.show(false);
 
     }//GEN-LAST:event_jButton2ActionPerformed
 

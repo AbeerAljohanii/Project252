@@ -25,6 +25,7 @@ public class PayPal implements PayStrategy {
     public String pay(double paymentAmount) {
         add();
         if(CreditInfor.containsKey(Email) && CreditInfor.containsValue(password)){
+            
             return "Paying " + paymentAmount+ " using PayPal successfully";
         } else{
             return null;

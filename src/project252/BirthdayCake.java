@@ -7,15 +7,16 @@ public class BirthdayCake extends Cookies {
     }
 
     public BirthdayCake(Extra extra) {
-        super("Birthday Cake with " + extra.getextra(), 4.99 + extra.getprice(), extra);
+        super("Birthday Cake with ", 4.99+extra.getprice() , extra);
     }
-//@Override
-//    String information() {
-//        if (this.extra == null) {
-//            return getType() + " ";
-//        } else {
-//            return getType() + " " + extra.getextra();
-//
-//        }
-//    }
+@Override
+    String information() {
+        if (this.extra == null) {
+            return getType() + " "+ getPrice() ;
+        } else {
+             return getType() +" "+extra.getextra()+  " = "  + getPrice();
+
+        }
+    }
+   
 }
