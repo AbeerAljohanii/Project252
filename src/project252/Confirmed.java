@@ -38,9 +38,11 @@ public class Confirmed extends javax.swing.JFrame {
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 830, 120, 50));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 730, 70));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 730, 70));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Confirmed.png"))); // NOI18N
+        jLabel1.setMaximumSize(new java.awt.Dimension(1478, 1024));
+        jLabel1.setMinimumSize(new java.awt.Dimension(1478, 1024));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 1030));
 
         jTextField2.setText("jTextField2");

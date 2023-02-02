@@ -5,10 +5,6 @@
  */
 package project252;
 
-/**
- *
- * @author ra52m
- */
 public interface PayStrategy {
     String pay(double paymentAmount);    
 }

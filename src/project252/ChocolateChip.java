@@ -12,11 +12,10 @@ public class ChocolateChip extends Cookies {
 
     @Override
     String information() {
-        
-        if (this.extra == null) {
-             return String.format("%-55s %10.2f\n", getType(), getPrice());
+       if (this.extra == null) {
+             return String.format("%-52s %10.2f\n", getType(), getPrice());
         } else {
-            return String.format("%-20s %10.2f\n", getType()+" "+extra.getextra(), getPrice());
+            return String.format("%-15s %14.2f\n", getType() + " " + extra.getextra(), getPrice());
 
         }
     }

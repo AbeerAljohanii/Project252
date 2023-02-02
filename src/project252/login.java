@@ -45,27 +45,27 @@ public class login extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1478, 1024));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel2.setText("Password");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 511, 90, 20));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 511, 210, 40));
 
-        password.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
-        jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 540, 190, 30));
+        password.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 560, 250, 50));
 
-        jLabel3.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel3.setText("User name");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 430, 90, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 400, 170, 40));
 
-        User.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
+        User.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         User.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UserActionPerformed(evt);
             }
         });
-        jPanel1.add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 460, 190, 30));
+        jPanel1.add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 450, 340, 50));
 
         jButton1.setBackground(new java.awt.Color(255, 218, 218));
-        jButton1.setFont(new java.awt.Font("SimSun", 1, 36)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 36)); // NOI18N
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -32,43 +32,49 @@ public class Payment extends javax.swing.JFrame {
         CreditCard = new javax.swing.JRadioButton();
         PayPal = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1440, 1024));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttonGroup1.add(CreditCard);
         CreditCard.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        CreditCard.setText("Credit Card");
-        jPanel1.add(CreditCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, -1, -1));
+        jPanel1.add(CreditCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 610, -1, -1));
 
         buttonGroup1.add(PayPal);
-        PayPal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        PayPal.setText("PayPal");
+        PayPal.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        PayPal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        PayPal.setIconTextGap(6);
+        PayPal.setPreferredSize(new java.awt.Dimension(20, 20));
         PayPal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PayPalActionPerformed(evt);
             }
         });
-        jPanel1.add(PayPal, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, -1, -1));
+        jPanel1.add(PayPal, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 610, 20, 20));
 
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 470, 130, 60));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 870, 130, 60));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/paymentBackgound.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 1020));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 872, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -80,7 +86,7 @@ public class Payment extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         if (CreditCard.isSelected()) {
-            CreditCardGUI card = new CreditCardGUI();
+            MasterCardGUI card = new MasterCardGUI();
             card.show();
             this.show(false);
         } else if (PayPal.isSelected()) {
@@ -132,6 +138,7 @@ public class Payment extends javax.swing.JFrame {
     private javax.swing.JRadioButton PayPal;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

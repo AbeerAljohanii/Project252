@@ -11,7 +11,6 @@ public class Project252 {
 
     public static void main(String[] args) {
     }
-
     public void login(String name, String pass) throws FileNotFoundException {
         Sname = name;
         Spass = pass;
@@ -28,7 +27,7 @@ public class Project252 {
         do {
             String nameFile = input.next();
             String passFile = input.next();
-            if (nameFile.equalsIgnoreCase(Sname) && passFile.equalsIgnoreCase(Spass)) {
+            if (nameFile.equals(Sname) && passFile.equals(Spass)) {
                 check = true;
             }
             size--;

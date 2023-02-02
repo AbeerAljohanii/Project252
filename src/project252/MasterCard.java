@@ -9,17 +9,17 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class CreditCard implements PayStrategy {
+public class MasterCard implements PayStrategy {
 
     String number;
     String Date;
     String CVV;
     double amount = 0;
 
-    public CreditCard() {
+    public MasterCard() {
     }
 
-    public CreditCard(String number, String Date, String CVV) {
+    public MasterCard(String number, String Date, String CVV) {
         this.number = number;
         this.Date = Date;
         this.CVV = CVV;
@@ -49,7 +49,7 @@ public class CreditCard implements PayStrategy {
     public String pay(double paymentAmount) {
         if (paymentAmount <= amount) {
             amount -= paymentAmount;
-            return "Paying " + paymentAmount + " using CreditCard successfully";
+            return "Paying " + String.format("%.2f $",paymentAmount) + " using CreditCard successfully";
         } else {
             return null;
         }

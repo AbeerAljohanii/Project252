@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package project252;
 
 import java.io.File;
@@ -21,11 +17,6 @@ public class PayPal implements PayStrategy {
         this.Email = Email;
         this.password = password;
     }
-//    void add(){
-//       CreditInfor.put("ra52mii@gmail.com", "67890");
-//       CreditInfor.put("shatha@gmail.com","12345");
-//    }
-//    
     boolean check() throws FileNotFoundException {
         File F = new File("paypal.txt");
         Scanner input = new Scanner(F);
@@ -47,7 +38,7 @@ public class PayPal implements PayStrategy {
     @Override
     public String pay(double paymentAmount) {
         if (paymentAmount <= amount) {
-            return "Paying " + paymentAmount+ " using PayPal successfully";
+            return "Paying " + String.format("%.2f $",paymentAmount)+ " using PayPal successfully";
         } else{
             return null;
         } 
