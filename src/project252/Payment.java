@@ -16,6 +16,9 @@ public class Payment extends javax.swing.JFrame {
      */
     public Payment() {
         initComponents();
+        
+        enter.setContentAreaFilled(false);
+        enter.setOpaque(false);
     }
 
     /**
@@ -31,7 +34,7 @@ public class Payment extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         CreditCard = new javax.swing.JRadioButton();
         PayPal = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
+        enter = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,12 +59,14 @@ public class Payment extends javax.swing.JFrame {
         });
         jPanel1.add(PayPal, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 610, 20, 20));
 
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        enter.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        enter.setText("Enter");
+        enter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                enterActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 870, 130, 60));
+        jPanel1.add(enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 850, 260, 110));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/paymentBackgound.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 1020));
@@ -83,7 +88,7 @@ public class Payment extends javax.swing.JFrame {
     private void PayPalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayPalActionPerformed
     }//GEN-LAST:event_PayPalActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterActionPerformed
 
         if (CreditCard.isSelected()) {
             MasterCardGUI card = new MasterCardGUI();
@@ -96,7 +101,7 @@ public class Payment extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_enterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,7 +142,7 @@ public class Payment extends javax.swing.JFrame {
     private javax.swing.JRadioButton CreditCard;
     private javax.swing.JRadioButton PayPal;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton enter;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

@@ -16,6 +16,12 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
      */
     public PinkVelvetGUI() {
         initComponents();
+        ADD.setContentAreaFilled(false);
+        ADD.setOpaque(false);
+        home.setContentAreaFilled(false);
+        home.setOpaque(false);
+        cart.setContentAreaFilled(false);
+        cart.setOpaque(false);
     }
 
     /**
@@ -32,7 +38,7 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
         without = new javax.swing.JRadioButton();
         Dark = new javax.swing.JRadioButton();
         white = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
+        ADD = new javax.swing.JButton();
         home = new javax.swing.JButton();
         cart = new javax.swing.JButton();
         pinkVelvetBackground = new javax.swing.JLabel();
@@ -62,14 +68,14 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
         white.setText("Extra White Chocolate");
         jPanel1.add(white, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 730, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 36)); // NOI18N
-        jButton1.setText("ADD");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ADD.setFont(new java.awt.Font("Bookman Old Style", 1, 36)); // NOI18N
+        ADD.setText("ADD");
+        ADD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ADDActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 850, 190, 70));
+        jPanel1.add(ADD, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 840, 380, 90));
 
         home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/home.png"))); // NOI18N
         home.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +115,7 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_withoutActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
         if (without.isSelected()) {
             Cart.addarray(Home.cookiesFactory.getCookies("Pink Velvet"));
         } else if (white.isSelected()) {
@@ -119,7 +125,7 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
         }
         Home h = new Home();
         h.show(true);
-        this.show(false);    }//GEN-LAST:event_jButton1ActionPerformed
+        this.show(false);    }//GEN-LAST:event_ADDActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         Home h = new Home();
@@ -170,11 +176,11 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ADD;
     private javax.swing.JRadioButton Dark;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton cart;
     private javax.swing.JButton home;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel pinkVelvetBackground;
     private javax.swing.JRadioButton white;

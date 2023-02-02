@@ -9,6 +9,8 @@ public class Confirmed extends javax.swing.JFrame {
     
     public Confirmed() {
         initComponents();
+        home.setContentAreaFilled(false);
+        home.setOpaque(false);
     }
     
     String print;
@@ -18,7 +20,7 @@ public class Confirmed extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        home = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
@@ -28,14 +30,14 @@ public class Confirmed extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1400, 1030));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jButton1.setText("Home");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        home.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        home.setText("Home");
+        home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                homeActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 830, 120, 50));
+        jPanel1.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 820, 180, 80));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 730, 70));
@@ -62,12 +64,12 @@ public class Confirmed extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         Home home = new Home();
       
         home.show();
         this.show(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_homeActionPerformed
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -102,7 +104,7 @@ public class Confirmed extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

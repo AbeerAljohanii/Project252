@@ -12,6 +12,8 @@ public class BirthdayCakeGUI extends javax.swing.JFrame {
      */
     public BirthdayCakeGUI() {
         initComponents();
+        ADD.setContentAreaFilled(false);
+        ADD.setOpaque(false);
     }
 
     /**
@@ -29,7 +31,7 @@ public class BirthdayCakeGUI extends javax.swing.JFrame {
         white = new javax.swing.JRadioButton();
         Dark = new javax.swing.JRadioButton();
         home = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        ADD = new javax.swing.JButton();
         cart = new javax.swing.JButton();
         BirthdayCakeBackground = new javax.swing.JLabel();
 
@@ -71,14 +73,14 @@ public class BirthdayCakeGUI extends javax.swing.JFrame {
         });
         jPanel1.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, -1));
 
-        jButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 36)); // NOI18N
-        jButton1.setText("ADD");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ADD.setFont(new java.awt.Font("Bookman Old Style", 1, 36)); // NOI18N
+        ADD.setText("ADD");
+        ADD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ADDActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 860, 190, 70));
+        jPanel1.add(ADD, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 850, 400, 80));
 
         cart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/shopping cart.png"))); // NOI18N
         cart.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +126,7 @@ public class BirthdayCakeGUI extends javax.swing.JFrame {
         this.show(false);
     }//GEN-LAST:event_homeActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
         if (without.isSelected()) {
             Cart.addarray(Home.cookiesFactory.getCookies("Birthday Cake"));
         } else if (white.isSelected()) {
@@ -135,7 +137,7 @@ public class BirthdayCakeGUI extends javax.swing.JFrame {
         this.show(false);
         Home h = new Home();
         h.show(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ADDActionPerformed
 
     private void cartjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartjButton3ActionPerformed
         CartGUI c = new CartGUI();
@@ -179,12 +181,12 @@ public class BirthdayCakeGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ADD;
     private javax.swing.JLabel BirthdayCakeBackground;
     private javax.swing.JRadioButton Dark;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton cart;
     private javax.swing.JButton home;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton white;
     private javax.swing.JRadioButton without;

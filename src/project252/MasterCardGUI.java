@@ -21,6 +21,8 @@ public class MasterCardGUI extends javax.swing.JFrame {
      */
     public MasterCardGUI() {
         initComponents();
+        pay.setContentAreaFilled(false); 
+        pay.setOpaque(false);
     }
 
     /**
@@ -39,7 +41,7 @@ public class MasterCardGUI extends javax.swing.JFrame {
         Number = new javax.swing.JTextField();
         Date = new javax.swing.JTextField();
         CVV = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        pay = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,12 +77,15 @@ public class MasterCardGUI extends javax.swing.JFrame {
         CVV.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(CVV, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 660, 110, 40));
 
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        pay.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        pay.setForeground(new java.awt.Color(255, 255, 255));
+        pay.setText("Pay");
+        pay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                payActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 890, 160, 60));
+        jPanel1.add(pay, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 870, 280, 100));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/masterBackgound.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -99,7 +104,7 @@ public class MasterCardGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void payActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payActionPerformed
 
         MasterCard credit = new MasterCard(Number.getText().trim(), Date.getText().trim(), CVV.getText().trim());
         Context context = new Context(credit);
@@ -127,7 +132,7 @@ public class MasterCardGUI extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_payActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,11 +174,11 @@ public class MasterCardGUI extends javax.swing.JFrame {
     private javax.swing.JTextField CVV;
     private javax.swing.JTextField Date;
     private javax.swing.JTextField Number;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton pay;
     // End of variables declaration//GEN-END:variables
 }

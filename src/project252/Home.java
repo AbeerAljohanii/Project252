@@ -11,6 +11,18 @@ public class Home extends javax.swing.JFrame {
 
     public Home() {
         initComponents();
+        exit.setContentAreaFilled(false);
+        exit.setOpaque(false);
+        cart.setContentAreaFilled(false);
+        cart.setOpaque(false);
+        ChocolateChip.setContentAreaFilled(false);
+        ChocolateChip.setOpaque(false);
+        PinkVelvet.setContentAreaFilled(false);
+        PinkVelvet.setOpaque(false);
+        SunnyDay.setContentAreaFilled(false);
+        SunnyDay.setOpaque(false);
+        BirthdayCake.setContentAreaFilled(false);
+        BirthdayCake.setOpaque(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -18,8 +30,8 @@ public class Home extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
+        cart = new javax.swing.JButton();
         PinkVelvet = new javax.swing.JButton();
         ChocolateChip = new javax.swing.JButton();
         BirthdayCake = new javax.swing.JButton();
@@ -31,21 +43,21 @@ public class Home extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1400, 1024));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/signout.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/signout.png"))); // NOI18N
+        exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                exitActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 100, 90));
+        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 100, 90));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/shopping cart.png"))); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        cart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/shopping cart.png"))); // NOI18N
+        cart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                cartActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 20, 120, 90));
+        jPanel1.add(cart, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 20, 120, 90));
 
         PinkVelvet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/pinkVelvet.png"))); // NOI18N
         PinkVelvet.setText("jButton2");
@@ -54,7 +66,7 @@ public class Home extends javax.swing.JFrame {
                 PinkVelvetActionPerformed(evt);
             }
         });
-        jPanel1.add(PinkVelvet, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 220, 330, 380));
+        jPanel1.add(PinkVelvet, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 230, 330, 380));
 
         ChocolateChip.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/chocolate chip.png"))); // NOI18N
         ChocolateChip.setText("jButton2");
@@ -72,7 +84,7 @@ public class Home extends javax.swing.JFrame {
                 BirthdayCakeActionPerformed(evt);
             }
         });
-        jPanel1.add(BirthdayCake, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 620, 330, 380));
+        jPanel1.add(BirthdayCake, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 640, 330, 380));
 
         SunnyDay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/SunnyDay.png"))); // NOI18N
         SunnyDay.setText("jButton2");
@@ -101,12 +113,12 @@ public class Home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         login l = new login();
         l.show();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_exitActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void cartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartActionPerformed
         Cart cart = new Cart();
         CartGUI c = new CartGUI();
         c.jTextArea1.setText("");
@@ -118,7 +130,7 @@ public class Home extends javax.swing.JFrame {
         c.show();
         this.show(false);
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_cartActionPerformed
 
     private void ChocolateChipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChocolateChipActionPerformed
         ChocolateChipGUI c = new ChocolateChipGUI();
@@ -182,8 +194,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton PinkVelvet;
     private javax.swing.JButton SunnyDay;
     private javax.swing.JLabel backgound;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton cart;
+    private javax.swing.JButton exit;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

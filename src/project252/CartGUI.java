@@ -12,15 +12,22 @@ public class CartGUI extends javax.swing.JFrame {
 
     public CartGUI() {
         initComponents();
+        confirm.setContentAreaFilled(false);
+        confirm.setOpaque(false);
+        home.setContentAreaFilled(false);
+        home.setOpaque(false);
+        exit.setContentAreaFilled(false);
+        exit.setOpaque(false);
+        
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        confirm = new javax.swing.JButton();
+        home = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
@@ -31,31 +38,31 @@ public class CartGUI extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1400, 1030));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(255, 218, 218));
-        jButton2.setFont(new java.awt.Font("Bell MT", 1, 24)); // NOI18N
-        jButton2.setText("Confirm");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        confirm.setBackground(new java.awt.Color(255, 218, 218));
+        confirm.setFont(new java.awt.Font("Bell MT", 1, 36)); // NOI18N
+        confirm.setText("Confirm");
+        confirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                confirmActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 460, 140, 70));
+        jPanel1.add(confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 460, 200, 70));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/home.png"))); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/home.png"))); // NOI18N
+        home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                homeActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 30, 100, 90));
+        jPanel1.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 30, 100, 90));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/signout.png"))); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/signout.png"))); // NOI18N
+        exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                exitActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 100, 90));
+        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 100, 90));
 
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
@@ -65,8 +72,8 @@ public class CartGUI extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 750, 630));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 360, 250, 40));
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 360, 250, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/cartBackgound.png"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(1478, 1024));
@@ -87,7 +94,7 @@ public class CartGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         if (Cart.totalPrice == 0) {
             JOptionPane.showMessageDialog(null, "The cart is empty");
             Home h = new Home();
@@ -100,18 +107,18 @@ public class CartGUI extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_confirmActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
           Home h = new Home();
         h.show();
        
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_homeActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         login l = new login();
         l.show();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_exitActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -147,9 +154,9 @@ public class CartGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton confirm;
+    private javax.swing.JButton exit;
+    private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

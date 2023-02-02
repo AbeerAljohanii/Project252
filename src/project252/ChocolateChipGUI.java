@@ -15,6 +15,12 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
 
     public ChocolateChipGUI() {
         initComponents();
+        ADD.setContentAreaFilled(false);
+        ADD.setOpaque(false);
+        home.setContentAreaFilled(false);
+        home.setOpaque(false);
+        cart.setContentAreaFilled(false);
+        cart.setOpaque(false);
     }
 
     /**
@@ -33,7 +39,7 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
         without = new javax.swing.JRadioButton();
         cart = new javax.swing.JButton();
         home = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        ADD = new javax.swing.JButton();
         chocolateChipBackgound = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,14 +93,14 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
         });
         jPanel1.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, -1));
 
-        jButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 36)); // NOI18N
-        jButton1.setText("ADD");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ADD.setFont(new java.awt.Font("Bookman Old Style", 1, 36)); // NOI18N
+        ADD.setText("ADD");
+        ADD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ADDActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 850, 190, 70));
+        jPanel1.add(ADD, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 850, 410, 70));
 
         chocolateChipBackgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/chocolate chip backgound.png"))); // NOI18N
         chocolateChipBackgound.setText("jLabel1");
@@ -140,7 +146,7 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
         this.show(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
         if (without.isSelected()) {
             Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip"));
         } else if (white.isSelected()) {
@@ -151,7 +157,7 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
         this.show(false);
         Home h = new Home();
         h.show(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ADDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,12 +195,12 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ADD;
     private javax.swing.JRadioButton Dark;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton cart;
     private javax.swing.JLabel chocolateChipBackgound;
     private javax.swing.JButton home;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton white;
     private javax.swing.JRadioButton without;

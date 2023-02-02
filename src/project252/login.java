@@ -20,6 +20,9 @@ public class login extends javax.swing.JFrame {
 
     public login() {
         initComponents();
+        login.setContentAreaFilled(false);
+        login.setOpaque(false);
+        
     }
 
     /**
@@ -36,7 +39,7 @@ public class login extends javax.swing.JFrame {
         password = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         User = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        login = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,15 +67,15 @@ public class login extends javax.swing.JFrame {
         });
         jPanel1.add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 450, 340, 50));
 
-        jButton1.setBackground(new java.awt.Color(255, 218, 218));
-        jButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 36)); // NOI18N
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        login.setBackground(new java.awt.Color(255, 218, 218));
+        login.setFont(new java.awt.Font("Bookman Old Style", 1, 36)); // NOI18N
+        login.setText("Login");
+        login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                loginActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 800, 160, 80));
+        jPanel1.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 800, 160, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/background.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -93,7 +96,7 @@ public class login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         Project252 p = new Project252();
         if (User.getText().isEmpty() || User.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "The user name is mandatory");
@@ -113,7 +116,7 @@ public class login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Sorry we could not find yout account");
             }
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_loginActionPerformed
 
     private void UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserActionPerformed
 
@@ -157,11 +160,11 @@ public class login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTextField User;
-    private javax.swing.JButton jButton1;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     public javax.swing.JPanel jPanel1;
+    private javax.swing.JButton login;
     public static javax.swing.JTextField password;
     // End of variables declaration//GEN-END:variables
 }

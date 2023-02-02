@@ -16,6 +16,12 @@ public class SunnyDayGUI extends javax.swing.JFrame {
      */
     public SunnyDayGUI() {
         initComponents();
+        ADD.setContentAreaFilled(false);
+        ADD.setOpaque(false);
+        home.setContentAreaFilled(false);
+        home.setOpaque(false);
+        cart.setContentAreaFilled(false);
+        cart.setOpaque(false);
     }
 
     /**
@@ -32,9 +38,9 @@ public class SunnyDayGUI extends javax.swing.JFrame {
         without = new javax.swing.JRadioButton();
         Dark = new javax.swing.JRadioButton();
         white = new javax.swing.JRadioButton();
-        jButton2 = new javax.swing.JButton();
+        home = new javax.swing.JButton();
         cart = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        ADD = new javax.swing.JButton();
         SunnyDayBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,13 +68,13 @@ public class SunnyDayGUI extends javax.swing.JFrame {
         white.setText("Extra White Chocolate");
         jPanel1.add(white, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 740, -1, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/signout.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/home.png"))); // NOI18N
+        home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                homeActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 80));
+        jPanel1.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 80));
 
         cart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/shopping cart.png"))); // NOI18N
         cart.addActionListener(new java.awt.event.ActionListener() {
@@ -78,14 +84,14 @@ public class SunnyDayGUI extends javax.swing.JFrame {
         });
         jPanel1.add(cart, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 20, 120, -1));
 
-        jButton3.setFont(new java.awt.Font("Bookman Old Style", 1, 36)); // NOI18N
-        jButton3.setText("ADD");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        ADD.setFont(new java.awt.Font("Bookman Old Style", 1, 36)); // NOI18N
+        ADD.setText("ADD");
+        ADD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                ADDActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 860, 190, 70));
+        jPanel1.add(ADD, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 850, 390, 80));
 
         SunnyDayBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/sunny day backgound.png"))); // NOI18N
         SunnyDayBackground.setText("jLabel1");
@@ -109,11 +115,11 @@ public class SunnyDayGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_withoutActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         Home h = new Home();
         h.show(true);
         this.show(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_homeActionPerformed
 
     private void cartjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartjButton3ActionPerformed
         CartGUI c = new CartGUI();
@@ -121,7 +127,7 @@ public class SunnyDayGUI extends javax.swing.JFrame {
         this.show(false);
     }//GEN-LAST:event_cartjButton3ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
         if (without.isSelected()) {
             Cart.addarray(Home.cookiesFactory.getCookies("Sunny Day"));
         } else if (white.isSelected()) {
@@ -132,7 +138,7 @@ public class SunnyDayGUI extends javax.swing.JFrame {
         this.show(false);
         Home h = new Home();
         h.show(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_ADDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,13 +177,12 @@ public class SunnyDayGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ADD;
     private javax.swing.JRadioButton Dark;
     private javax.swing.JLabel SunnyDayBackground;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton cart;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton home;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton white;
     private javax.swing.JRadioButton without;
