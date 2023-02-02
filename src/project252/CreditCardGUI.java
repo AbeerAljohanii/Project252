@@ -5,6 +5,9 @@
  */
 package project252;
 
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -80,21 +83,33 @@ public class CreditCardGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         Context context = new Context(new CreditCard(Number.getText().trim(), Date.getText().trim(), CVV.getText().trim()));
+
+        CreditCard credit = new CreditCard(Number.getText().trim(), Date.getText().trim(), CVV.getText().trim());
+        Context context = new Context(credit);
         Confirmed c = new Confirmed();
-        if (context.ExecuteStrategy(Cart.getTotalPrice()) != null) {
-            Cart.cookie.clear(); 
-            Cart.totalPrice=0;
-            c.show(true);
-            this.show(false);
-            
-        } else {
-            JOptionPane.showMessageDialog(null, "Error");
-            Payment p = new Payment();
-            p.show();
-            this.show(false);
+        try {
+            if (credit.check()) {
+                if (context.ExecuteStrategy(Cart.totalPrice) != null) {
+                    c.jLabel2.setText(credit.pay(Cart.totalPrice));
+                    Cart.cookie.clear();
+                    Cart.totalPrice = 0;
+                    c.show(true);
+                    this.show(false);
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "error");
+                    this.show();
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "The account does not found");
+                this.show();
+
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(CreditCardGUI.class.getName()).log(Level.SEVERE, null, ex);
         }
-  
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

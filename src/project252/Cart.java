@@ -16,10 +16,6 @@ public class Cart {
     public ArrayList<Cookies> getCookie() {
         return cookie;
     }
-
-    public static double getTotalPrice() {
-        return totalPrice;
-    }
     static void addarray(Cookies c){
       cookie.add(c);
       totalPrice+=c.getPrice();

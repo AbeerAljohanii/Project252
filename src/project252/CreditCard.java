@@ -5,10 +5,12 @@
  */
 package project252;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class CreditCard implements PayStrategy {
-  private Map<String, String> CreditInfor = new HashMap<>();
+
     String number;
     String Date;
     String CVV;
@@ -16,19 +18,39 @@ public class CreditCard implements PayStrategy {
 
     public CreditCard() {
     }
-    
+
     public CreditCard(String number, String Date, String CVV) {
         this.number = number;
         this.Date = Date;
         this.CVV = CVV;
-        amount = 400;
     }
+
+    boolean check() throws FileNotFoundException {
+        File F = new File("mastercard.txt");
+        Scanner input = new Scanner(F);
+
+        int size = input.nextInt();
+        do {
+            String numberf = input.next();
+            String Datef = input.next();
+            String CVVf = input.next();
+            if (numberf.equals(number) && Datef.equals(Datef) && CVVf.equals(CVV)) {
+                amount = input.nextDouble();
+                return true;
+            } else {
+                amount = input.nextDouble();
+            }
+            size--;
+        } while (size != 0);
+        return false;
+    }
+
     @Override
     public String pay(double paymentAmount) {
         if (paymentAmount <= amount) {
             amount -= paymentAmount;
-            return "Paying " + paymentAmount+ " using CreditCard successfully";    
-        } else{
+            return "Paying " + paymentAmount + " using CreditCard successfully";
+        } else {
             return null;
         }
     }

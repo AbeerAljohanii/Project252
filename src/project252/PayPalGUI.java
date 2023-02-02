@@ -5,6 +5,9 @@
  */
 package project252;
 
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -77,19 +80,25 @@ public class PayPalGUI extends javax.swing.JFrame {
         PayPal pay = new PayPal(Email.getText().trim(), Password.getText().trim());
         Context context = new Context(pay);
         Confirmed c = new Confirmed();
-         
-        if (context.ExecuteStrategy(Cart.getTotalPrice()) != null) {
-            Cart.cookie.clear();
-            Cart.totalPrice = 0;
-            this.show(false);
-            c.show(true);
-        } else {
+        try {
+            if (pay.check()) {
+                if (context.ExecuteStrategy(Cart.totalPrice) != null) {
+                    c.jLabel2.setText(pay.pay(Cart.totalPrice));
+                    Cart.cookie.clear();
+                    Cart.totalPrice = 0;
+                    this.show(false);
+                    c.show(true);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error");
+                    this.show();
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "The account does not found");
+                this.show();
 
-            JOptionPane.showMessageDialog(null, "Error");
-            Payment p = new Payment();
-            p.show();
-            this.show(false);
-             
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(CreditCardGUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
