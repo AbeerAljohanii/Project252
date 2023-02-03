@@ -36,9 +36,10 @@ public class login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(1478, 1024));
         setResizable(false);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(1478, 1024));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1424, 985));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
@@ -76,9 +77,9 @@ public class login extends javax.swing.JFrame {
         jPanel1.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 800, 160, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/background.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        jLabel1.setPreferredSize(new java.awt.Dimension(1424, 985));
         jLabel1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -5, 1330, 1040));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,7 +92,7 @@ public class login extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(1331, 985));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -106,14 +107,15 @@ public class login extends javax.swing.JFrame {
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
             }
+            if (flag) {
+                Home h = new Home();
+                this.show(false);
+                h.show(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "Sorry we could not find yout account");
+            }
         }
-        if (flag) {
-            Home h = new Home();
-            login.show(false);
-            h.show(true);
-        } else {
-            JOptionPane.showMessageDialog(null, "Sorry we could not find yout account");
-        }
+
 
     }//GEN-LAST:event_loginActionPerformed
 
@@ -154,9 +156,6 @@ public class login extends javax.swing.JFrame {
     }
 
     public static void main(String args[]) {
-
-        login l = new login();
-        l.show();
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

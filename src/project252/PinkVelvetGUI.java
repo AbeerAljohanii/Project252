@@ -44,6 +44,7 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
         pinkVelvetBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -75,7 +76,7 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
                 ADDActionPerformed(evt);
             }
         });
-        jPanel1.add(ADD, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 840, 380, 90));
+        jPanel1.add(ADD, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 850, 380, 90));
 
         home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/home.png"))); // NOI18N
         home.addActionListener(new java.awt.event.ActionListener() {
@@ -94,9 +95,8 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
         jPanel1.add(cart, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 20, 120, -1));
 
         pinkVelvetBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/pink velvet backgound.png"))); // NOI18N
-        pinkVelvetBackground.setText("jLabel1");
         pinkVelvetBackground.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(pinkVelvetBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(pinkVelvetBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -40, 1480, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,6 +110,7 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void withoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withoutActionPerformed
@@ -125,7 +126,7 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
             Cart.addarray(Home.cookiesFactory.getCookies("Pink Velvet with extra dark")); // add the type of cookies with dark chocolate extra to arraylist in Cart class 
         }
         Home h = new Home(); // show home frame
-        h.show(true);
+        h.show();
         this.show(false);    }//GEN-LAST:event_ADDActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed

@@ -23,6 +23,7 @@ public class Home extends javax.swing.JFrame {
         SunnyDay.setOpaque(false);
         BirthdayCake.setContentAreaFilled(false);
         BirthdayCake.setOpaque(false);
+
     }
 
     @SuppressWarnings("unchecked")
@@ -39,8 +40,11 @@ public class Home extends javax.swing.JFrame {
         backgound = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1478, 1024));
+        setResizable(false);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(1400, 1024));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1400, 1024));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1478, 1024));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/signout.png"))); // NOI18N
@@ -96,9 +100,8 @@ public class Home extends javax.swing.JFrame {
         jPanel1.add(SunnyDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 640, 340, 370));
 
         backgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/backgound.png"))); // NOI18N
-        backgound.setText("jLabel2");
         backgound.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(backgound, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(backgound, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 1030));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,7 +114,8 @@ public class Home extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(1434, 1063));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
@@ -127,7 +131,7 @@ public class Home extends javax.swing.JFrame {
         for (int i = 0; i < cart.getCookie().size(); i++) {
             c.jTextArea1.append("\n" + cart.getCookie().get(i).information()); // print the order in cart frame
         }
-        c.jLabel2.setText(String.format("%.2f $", Cart.totalPrice )); // print total in cart frame
+        c.jLabel2.setText(String.format("%.2f $", Cart.totalPrice)); // print total in cart frame
         c.show(); // show Cart frame 
         this.show(false);
 

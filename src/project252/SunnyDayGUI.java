@@ -44,8 +44,11 @@ public class SunnyDayGUI extends javax.swing.JFrame {
         SunnyDayBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1440, 1024));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1440, 1024));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttonGroup1.add(without);
@@ -82,7 +85,7 @@ public class SunnyDayGUI extends javax.swing.JFrame {
                 cartjButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(cart, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 20, 120, -1));
+        jPanel1.add(cart, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 10, 120, -1));
 
         ADD.setFont(new java.awt.Font("Bookman Old Style", 1, 36)); // NOI18N
         ADD.setText("ADD");
@@ -94,21 +97,23 @@ public class SunnyDayGUI extends javax.swing.JFrame {
         jPanel1.add(ADD, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 850, 390, 80));
 
         SunnyDayBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/sunny day backgound.png"))); // NOI18N
-        SunnyDayBackground.setText("jLabel1");
-        jPanel1.add(SunnyDayBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(SunnyDayBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, -1, 1030));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1460, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void withoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withoutActionPerformed
