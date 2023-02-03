@@ -5,6 +5,9 @@
  */
 package project252;
 
+import java.io.FileNotFoundException;
+
 public interface PayStrategy {
     String pay(double paymentAmount);    
+    boolean check() throws FileNotFoundException ;
 }

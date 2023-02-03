@@ -95,7 +95,8 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
 
         pinkVelvetBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/pink velvet backgound.png"))); // NOI18N
         pinkVelvetBackground.setText("jLabel1");
-        jPanel1.add(pinkVelvetBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 950));
+        pinkVelvetBackground.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel1.add(pinkVelvetBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,24 +118,24 @@ public class PinkVelvetGUI extends javax.swing.JFrame {
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
         if (without.isSelected()) {
-            Cart.addarray(Home.cookiesFactory.getCookies("Pink Velvet"));
+            Cart.addarray(Home.cookiesFactory.getCookies("Pink Velvet")); // add the type of cookies without extra to arraylist in Cart class 
         } else if (white.isSelected()) {
-            Cart.addarray(Home.cookiesFactory.getCookies("Pink Velvet with extra white"));
+            Cart.addarray(Home.cookiesFactory.getCookies("Pink Velvet with extra white")); // add the type of cookies with white chocolate extra to arraylist in Cart class 
         } else if (Dark.isSelected()){
-            Cart.addarray(Home.cookiesFactory.getCookies("Pink Velvet with extra dark"));
+            Cart.addarray(Home.cookiesFactory.getCookies("Pink Velvet with extra dark")); // add the type of cookies with dark chocolate extra to arraylist in Cart class 
         }
-        Home h = new Home();
+        Home h = new Home(); // show home frame
         h.show(true);
         this.show(false);    }//GEN-LAST:event_ADDActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        Home h = new Home();
+        Home h = new Home(); // show home frame
         h.show(true);
         this.show(false);
     }//GEN-LAST:event_homeActionPerformed
 
     private void cartjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartjButton3ActionPerformed
-        CartGUI c = new CartGUI();
+        CartGUI c = new CartGUI(); // show cart frame
         c.show(true);
         this.show(false);
     }//GEN-LAST:event_cartjButton3ActionPerformed

@@ -7,7 +7,6 @@ package project252;
 
 import javax.swing.JOptionPane;
 
-
 public class CartGUI extends javax.swing.JFrame {
 
     public CartGUI() {
@@ -18,8 +17,8 @@ public class CartGUI extends javax.swing.JFrame {
         home.setOpaque(false);
         exit.setContentAreaFilled(false);
         exit.setOpaque(false);
-        
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -96,12 +95,12 @@ public class CartGUI extends javax.swing.JFrame {
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         if (Cart.totalPrice == 0) {
-            JOptionPane.showMessageDialog(null, "The cart is empty");
+            JOptionPane.showMessageDialog(null, "The cart is empty"); //the dialog message is apear then returns to home frame
             Home h = new Home();
             h.show();
             this.show(false);
         } else {
-            Payment p = new Payment();
+            Payment p = new Payment(); // show payment frame
             p.show();
             this.show(false);
         }
@@ -110,9 +109,8 @@ public class CartGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_confirmActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-          Home h = new Home();
+        Home h = new Home(); // show 
         h.show();
-       
     }//GEN-LAST:event_homeActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed

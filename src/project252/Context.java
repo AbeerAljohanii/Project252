@@ -6,6 +6,6 @@ public class Context {
         this.paystrategy = paystrategy;
     }
     public String ExecuteStrategy(double amount){
-        return paystrategy.pay(amount);   
+        return paystrategy.pay(amount);
 }
 }

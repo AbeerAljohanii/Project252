@@ -104,7 +104,7 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
 
         chocolateChipBackgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/chocolate chip backgound.png"))); // NOI18N
         chocolateChipBackgound.setText("jLabel1");
-        jPanel1.add(chocolateChipBackgound, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 940));
+        jPanel1.add(chocolateChipBackgound, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,11 +112,11 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 3, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 944, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -135,27 +135,27 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_DarkActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        Home h = new Home();
+        Home h = new Home();  // show home frame
         h.show(true);
         this.show(false);
     }//GEN-LAST:event_homeActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        CartGUI c = new CartGUI();
+        CartGUI c = new CartGUI();  // show home frame
         c.show(true);
         this.show(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
         if (without.isSelected()) {
-            Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip"));
+            Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip")); // add the type of cookies without extra to arraylist in Cart class 
         } else if (white.isSelected()) {
-            Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip with extra white"));
+            Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip with extra white")); // add the type of cookies with white chocolate extra to arraylist in Cart class 
         } else if (Dark.isSelected()){
-            Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip with extra dark"));
+            Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip with extra dark")); // add the type of cookies with dark chocolate extra to arraylist in Cart class 
         }
         this.show(false);
-        Home h = new Home();
+        Home h = new Home();  // show home frame
         h.show(true);
     }//GEN-LAST:event_ADDActionPerformed
 

@@ -95,17 +95,17 @@ public class SunnyDayGUI extends javax.swing.JFrame {
 
         SunnyDayBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/sunny day backgound.png"))); // NOI18N
         SunnyDayBackground.setText("jLabel1");
-        jPanel1.add(SunnyDayBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 960));
+        jPanel1.add(SunnyDayBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1470, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -116,27 +116,27 @@ public class SunnyDayGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_withoutActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        Home h = new Home();
+        Home h = new Home(); // show home frame
         h.show(true);
         this.show(false);
     }//GEN-LAST:event_homeActionPerformed
 
     private void cartjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartjButton3ActionPerformed
-        CartGUI c = new CartGUI();
+        CartGUI c = new CartGUI(); // show cart frame
         c.show(true);
         this.show(false);
     }//GEN-LAST:event_cartjButton3ActionPerformed
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
         if (without.isSelected()) {
-            Cart.addarray(Home.cookiesFactory.getCookies("Sunny Day"));
+            Cart.addarray(Home.cookiesFactory.getCookies("Sunny Day")); // add the type of cookies without extra to arraylist in Cart class 
         } else if (white.isSelected()) {
-            Cart.addarray(Home.cookiesFactory.getCookies("Sunny Day with extra white"));
+            Cart.addarray(Home.cookiesFactory.getCookies("Sunny Day with extra white")); // add the type of cookies with white chocolate extra to arraylist in Cart class 
         } else if (Dark.isSelected()){
-            Cart.addarray(Home.cookiesFactory.getCookies("Sunny Day with extra dark"));
+            Cart.addarray(Home.cookiesFactory.getCookies("Sunny Day with extra dark")); // add the type of cookies with dark chocolate extra to arraylist in Cart class 
         }
         this.show(false);
-        Home h = new Home();
+        Home h = new Home(); // show home frame
         h.show(true);
     }//GEN-LAST:event_ADDActionPerformed
 

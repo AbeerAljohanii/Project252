@@ -10,7 +10,7 @@ public class CookiesFactory {
             if(cookies.contains("extra white")){
               return new SunnyDay(new WhiteChocolate());
             }else if(cookies.contains("extra dark")){
-              return new SunnyDay(new DarkChocolate());
+              return new SunnyDay(new DarkChocolate()); 
             }
             return new SunnyDay();
             

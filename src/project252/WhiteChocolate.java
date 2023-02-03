@@ -14,10 +14,4 @@ public class WhiteChocolate implements Extra {
     public double getprice() {
         return this.extraPrice;
     }
-
-    @Override
-    public String extra() {
-        return getextra() + " : " + getprice();
-    }
-
 }

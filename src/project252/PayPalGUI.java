@@ -72,7 +72,7 @@ public class PayPalGUI extends javax.swing.JFrame {
         jPanel1.add(pay, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 870, 260, 100));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/PaypalBackgound.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -89,8 +89,8 @@ public class PayPalGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void payActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payActionPerformed
-        PayPal pay = new PayPal(Email.getText().trim(), Password.getText().trim());
-        Context context = new Context(pay);
+        PayPal pay = new PayPal(Email.getText().trim(), Password.getText().trim()); // trim the space and send info to PayPal class
+        Context context = new Context(pay); // send the type of payment to context class
         Confirmed c = new Confirmed();
         try {
             if (pay.check()) {
@@ -101,13 +101,12 @@ public class PayPalGUI extends javax.swing.JFrame {
                     this.show(false);
                     c.show(true);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Error");
-                    this.show();
+                    JOptionPane.showMessageDialog(null, "The amount is not enough"); // dialog message apear 
+                    this.show(false);
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "The account does not found");
-                this.show();
-
+                JOptionPane.showMessageDialog(null, "The account does not found"); // dialog message apear 
+                this.show(false);
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MasterCardGUI.class.getName()).log(Level.SEVERE, null, ex);

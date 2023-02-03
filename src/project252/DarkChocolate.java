@@ -10,8 +10,4 @@ public class DarkChocolate implements Extra {
     public double getprice() {
         return this.extraPrice;
     }
-    @Override
-    public String extra() {
-        return getextra() + " : " + getprice();
-    }
 }

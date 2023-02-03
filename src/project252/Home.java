@@ -97,7 +97,8 @@ public class Home extends javax.swing.JFrame {
 
         backgound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/backgound.png"))); // NOI18N
         backgound.setText("jLabel2");
-        jPanel1.add(backgound, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 1020));
+        backgound.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel1.add(backgound, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,7 +115,7 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        login l = new login();
+        login l = new login(); // show login frame
         l.show();
     }//GEN-LAST:event_exitActionPerformed
 
@@ -122,36 +123,36 @@ public class Home extends javax.swing.JFrame {
         Cart cart = new Cart();
         CartGUI c = new CartGUI();
         c.jTextArea1.setText("");
-        c.jTextArea1.append(String.format("%-63s %-10s \n", "Item", "Price"));
+        c.jTextArea1.append(String.format("%-63s %-10s \n", "Item", "Price")); // print in cart frame
         for (int i = 0; i < cart.getCookie().size(); i++) {
-            c.jTextArea1.append("\n" + cart.getCookie().get(i).information());
+            c.jTextArea1.append("\n" + cart.getCookie().get(i).information()); // print the order in cart frame
         }
-        c.jLabel2.setText(String.format("%.2f $", Cart.totalPrice ));
-        c.show();
+        c.jLabel2.setText(String.format("%.2f $", Cart.totalPrice )); // print total in cart frame
+        c.show(); // show Cart frame 
         this.show(false);
 
     }//GEN-LAST:event_cartActionPerformed
 
     private void ChocolateChipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChocolateChipActionPerformed
         ChocolateChipGUI c = new ChocolateChipGUI();
-        c.show();
+        c.show(); // show ChocolateChip frame 
         this.show(false);
     }//GEN-LAST:event_ChocolateChipActionPerformed
 
     private void PinkVelvetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PinkVelvetActionPerformed
-        PinkVelvetGUI p = new PinkVelvetGUI();
+        PinkVelvetGUI p = new PinkVelvetGUI(); // show PinkVelvetGUI frame
         p.show();
         this.show(false);
     }//GEN-LAST:event_PinkVelvetActionPerformed
 
     private void SunnyDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SunnyDayActionPerformed
-        SunnyDayGUI s = new SunnyDayGUI();
+        SunnyDayGUI s = new SunnyDayGUI(); // show SunnyDayGUI frame
         s.show();
         this.show(false);
     }//GEN-LAST:event_SunnyDayActionPerformed
 
     private void BirthdayCakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BirthdayCakeActionPerformed
-        BirthdayCakeGUI b = new BirthdayCakeGUI();
+        BirthdayCakeGUI b = new BirthdayCakeGUI(); // show BirthdayCakeGUI frame
         b.show();
         this.show(false);
     }//GEN-LAST:event_BirthdayCakeActionPerformed

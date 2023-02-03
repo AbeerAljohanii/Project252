@@ -144,10 +144,11 @@
               <Image iconType="3" name="/picture/backgound.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel2"/>
+            <Property name="verticalTextPosition" type="int" value="1"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="1400" height="1020"/>
+              <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

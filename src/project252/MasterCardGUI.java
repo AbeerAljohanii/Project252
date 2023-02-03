@@ -106,8 +106,8 @@ public class MasterCardGUI extends javax.swing.JFrame {
 
     private void payActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payActionPerformed
 
-        MasterCard credit = new MasterCard(Number.getText().trim(), Date.getText().trim(), CVV.getText().trim());
-        Context context = new Context(credit);
+        MasterCard credit = new MasterCard(Number.getText().trim(), Date.getText().trim(), CVV.getText().trim()); // trim the space and send info to MasterCard class
+        Context context = new Context(credit); // send the type of payment to context class
         Confirmed c = new Confirmed();
         try {
             if (credit.check()) {
@@ -117,21 +117,17 @@ public class MasterCardGUI extends javax.swing.JFrame {
                     Cart.totalPrice = 0;
                     c.show(true);
                     this.show(false);
-
                 } else {
-                    JOptionPane.showMessageDialog(null, "error");
-                    this.show();
+                    JOptionPane.showMessageDialog(null, "The amount is not enough"); // dialog message apear 
+                    this.show(false);
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "The account does not found");
-                this.show();
-
+                JOptionPane.showMessageDialog(null, "The account does not found"); // dialog message apear 
+                this.show(false);
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MasterCardGUI.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
     }//GEN-LAST:event_payActionPerformed
 
     /**

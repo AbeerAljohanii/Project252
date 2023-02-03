@@ -10,23 +10,18 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class MasterCard implements PayStrategy {
-
-    String number;
-    String Date;
-    String CVV;
-    double amount = 0;
-
-    public MasterCard() {
-    }
+    private String number;
+    private String Date;
+    private String CVV;
+    private double amount = 0;
 
     public MasterCard(String number, String Date, String CVV) {
         this.number = number;
         this.Date = Date;
         this.CVV = CVV;
     }
-
-    boolean check() throws FileNotFoundException {
-        File F = new File("mastercard.txt");
+    public boolean check() throws FileNotFoundException {
+        File F = new File("mastercard.txt"); // read info of card from file
         Scanner input = new Scanner(F);
 
         int size = input.nextInt();
@@ -34,8 +29,8 @@ public class MasterCard implements PayStrategy {
             String numberf = input.next();
             String Datef = input.next();
             String CVVf = input.next();
-            if (numberf.equals(number) && Datef.equals(Datef) && CVVf.equals(CVV)) {
-                amount = input.nextDouble();
+            if (numberf.equals(number) && Datef.equals(Datef) && CVVf.equals(CVV)) { // check if it equal to number, date and cvv that are invoke from mastercard frame 
+                amount = input.nextDouble(); // read the amount from file
                 return true;
             } else {
                 amount = input.nextDouble();
@@ -49,7 +44,7 @@ public class MasterCard implements PayStrategy {
     public String pay(double paymentAmount) {
         if (paymentAmount <= amount) {
             amount -= paymentAmount;
-            return "Paying " + String.format("%.2f $",paymentAmount) + " using CreditCard successfully";
+            return "Paying " + String.format("%.2f $",paymentAmount) + " using CreditCard successfully"; // return paying successfully
         } else {
             return null;
         }

@@ -32,7 +32,7 @@ public class Payment extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        CreditCard = new javax.swing.JRadioButton();
+        MasterCard = new javax.swing.JRadioButton();
         PayPal = new javax.swing.JRadioButton();
         enter = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -43,9 +43,9 @@ public class Payment extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1440, 1024));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buttonGroup1.add(CreditCard);
-        CreditCard.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(CreditCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 610, -1, -1));
+        buttonGroup1.add(MasterCard);
+        MasterCard.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel1.add(MasterCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 610, -1, -1));
 
         buttonGroup1.add(PayPal);
         PayPal.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -69,7 +69,7 @@ public class Payment extends javax.swing.JFrame {
         jPanel1.add(enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 850, 260, 110));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/paymentBackgound.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 1020));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -90,11 +90,11 @@ public class Payment extends javax.swing.JFrame {
 
     private void enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterActionPerformed
 
-        if (CreditCard.isSelected()) {
+        if (MasterCard.isSelected()) { // if select master, display the MasterCardGUI frame 
             MasterCardGUI card = new MasterCardGUI();
             card.show();
             this.show(false);
-        } else if (PayPal.isSelected()) {
+        } else if (PayPal.isSelected()) { // if select paypal, display the PayPalGUI frame 
             PayPalGUI paypal = new PayPalGUI();
             paypal.show();
             this.show(false);
@@ -139,7 +139,7 @@ public class Payment extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton CreditCard;
+    private javax.swing.JRadioButton MasterCard;
     private javax.swing.JRadioButton PayPal;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton enter;
