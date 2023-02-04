@@ -10,7 +10,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,8 +21,8 @@ import javax.swing.JOptionPane;
  */
 public class signup extends javax.swing.JFrame {
 
-   
-    boolean flag ;
+    boolean flag;
+
     public signup() {
         initComponents();
         login.setContentAreaFilled(false);
@@ -55,6 +54,8 @@ public class signup extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setMinimumSize(new java.awt.Dimension(1290, 1000));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1270, 985));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nameSpace.addActionListener(new java.awt.event.ActionListener() {
@@ -103,15 +104,14 @@ public class signup extends javax.swing.JFrame {
 
         signupBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/signup (3).png"))); // NOI18N
         signupBackground.setText("jLabel1");
-        jPanel1.add(signupBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 1350, 900));
+        signupBackground.setPreferredSize(new java.awt.Dimension(1270, 985));
+        jPanel1.add(signupBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -70, 1300, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1290, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,12 +119,13 @@ public class signup extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
-      Singleton singleton = Singleton.getInstance();
-                File loginFile = singleton.getFile(); // Singleton
- 
+        Singleton singleton = Singleton.getInstance();
+        File loginFile = singleton.getFile(); // Singleton
+
         String name = nameSpace.getText();
         String password = passwordfield.getText();
         String password2 = passwordfield2.getText();
@@ -132,17 +133,17 @@ public class signup extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please Enter Username");
         } else if (password.isEmpty() || password.trim().equalsIgnoreCase("")) {//check if the user did not enter password 
             JOptionPane.showMessageDialog(null, "Please Enter Password");
-        }else if (password2.isEmpty() || password2.trim().equalsIgnoreCase("")) {//check if the user did not enter password confirmation
+        } else if (password2.isEmpty() || password2.trim().equalsIgnoreCase("")) {//check if the user did not enter password confirmation
             JOptionPane.showMessageDialog(null, "Please Enter confirmation of the Password");
         } else if (password.equalsIgnoreCase("") && name.equalsIgnoreCase("")) { // check if the user and password null
             JOptionPane.showMessageDialog(null, "Please Enter Password and Username");
-             } else if (!password.equals(password2)) { // check if the passwords don't match 
+        } else if (!password.equals(password2)) { // check if the passwords don't match 
             JOptionPane.showMessageDialog(null, "passwords don't match");
         } else {//if all the fields are filled 
-             try {
+            try {
                 Scanner input = new Scanner(loginFile);
                 flag = true;
-                while(input.hasNext()){
+                while (input.hasNext()) {
                     String nameFile = input.next();
                     String passFile = input.next();
                     if (nameFile.equals(name)) {//check if the username already exists 
@@ -150,47 +151,43 @@ public class signup extends javax.swing.JFrame {
                         break;
                     }
                 }
-                    if (flag){//if the user name doesn't exitsts in the system 
-                     try {
-                         FileWriter fileWritter = new FileWriter(loginFile.getName(), true);
-                         BufferedWriter bw = new BufferedWriter(fileWritter);
-                         bw.write(name+" "+password+"\n");//write the new username and password to the login file 
+                if (flag) {//if the user name doesn't exitsts in the system 
+                    try {
+                        FileWriter fileWritter = new FileWriter(loginFile.getName(), true);
+                        BufferedWriter bw = new BufferedWriter(fileWritter);
+                        bw.write(name + " " + password + "\n");//write the new username and password to the login file 
                         bw.close();
-                        
-                        } catch (IOException e) {
-                            //exception handling left as an exercise for the reader
-                        }
-                     //open home page and close this page 
-                      Home homePage = new Home();
-                      this.show(false);
-                      homePage.show(true);
+
+                    } catch (IOException e) {
+                        //exception handling left as an exercise for the reader
                     }
-                    else {//the username already taken 
-                      JOptionPane.showMessageDialog(null, "already existed username ");  
-                    }
-                  
-                
+                    //open home page and close this page 
+                    Home homePage = new Home();
+                    this.show(false);
+                    homePage.show(true);
+                } else {//the username already taken 
+                    JOptionPane.showMessageDialog(null, "already existed username ");
+                }
+
                 input.close();
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
-            
-            
-        
+
+
     }//GEN-LAST:event_signupActionPerformed
-             }
+        }
     }
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
         login loginPage = new login();
         this.show(false);
         loginPage.show(true);
-        
     }//GEN-LAST:event_loginActionPerformed
 
     private void nameSpaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameSpaceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameSpaceActionPerformed
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

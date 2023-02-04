@@ -93,20 +93,22 @@ public class login extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/background.png"))); // NOI18N
         jLabel1.setPreferredSize(new java.awt.Dimension(1424, 985));
         jLabel1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -20, 1330, 1040));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -20, 1280, 1040));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1328, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1260, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setSize(new java.awt.Dimension(1331, 1032));
+        setSize(new java.awt.Dimension(1265, 990));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -126,13 +128,13 @@ public class login extends javax.swing.JFrame {
                 File loginFile = singleton.getFile(); // Singleton
                 Scanner input = new Scanner(loginFile);
                 flag = false;
-                while(input.hasNext()){
+                while (input.hasNext()) {
                     String nameFile = input.next();
                     String passFile = input.next();
                     if (nameFile.equals(name) && passFile.equals(password)) {
                         flag = true;
                     }
-                  
+
                 }
                 input.close();
             } catch (FileNotFoundException ex) {
