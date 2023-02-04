@@ -120,8 +120,10 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     //open the login frame and close this one 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        login l = new login(); 
-        l.show();
+        login loginPage = new login(); 
+        loginPage.show();
+        this.show(false);
+        
     }//GEN-LAST:event_exitActionPerformed
 
     private void cartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartActionPerformed

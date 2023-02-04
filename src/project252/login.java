@@ -22,6 +22,8 @@ public class login extends javax.swing.JFrame {
         //make the button(s) transparent 
         login.setContentAreaFilled(false);
         login.setOpaque(false);
+        signup.setContentAreaFilled(false);
+        signup.setOpaque(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -34,6 +36,8 @@ public class login extends javax.swing.JFrame {
         nameBox = new javax.swing.JTextField();
         login = new javax.swing.JButton();
         passwordfield = new javax.swing.JPasswordField();
+        signup = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,15 +71,29 @@ public class login extends javax.swing.JFrame {
                 loginActionPerformed(evt);
             }
         });
-        jPanel1.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 800, 160, 80));
+        jPanel1.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 790, 160, 80));
 
         passwordfield.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(passwordfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 560, 210, 40));
 
+        signup.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        signup.setForeground(new java.awt.Color(255, 102, 102));
+        signup.setText("signup");
+        signup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signupActionPerformed(evt);
+            }
+        });
+        jPanel1.add(signup, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 910, -1, 30));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel4.setText("Don't have an account? ");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 910, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/background.png"))); // NOI18N
         jLabel1.setPreferredSize(new java.awt.Dimension(1424, 985));
         jLabel1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -5, 1330, 1040));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -20, 1330, 1040));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,7 +106,7 @@ public class login extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setSize(new java.awt.Dimension(1331, 985));
+        setSize(new java.awt.Dimension(1331, 1032));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -107,17 +125,15 @@ public class login extends javax.swing.JFrame {
                 Singleton singleton = Singleton.getInstance();
                 File loginFile = singleton.getFile(); // Singleton
                 Scanner input = new Scanner(loginFile);
-
-                int size = input.nextInt();
                 flag = false;
-                do {
+                while(input.hasNext()){
                     String nameFile = input.next();
                     String passFile = input.next();
                     if (nameFile.equals(name) && passFile.equals(password)) {
                         flag = true;
                     }
-                    size--;
-                } while (size != 0);
+                  
+                }
                 input.close();
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
@@ -140,6 +156,13 @@ public class login extends javax.swing.JFrame {
     private void nameBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameBoxActionPerformed
 
     }//GEN-LAST:event_nameBoxActionPerformed
+
+    private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
+        // TODO add your handling code here:
+        signup signupPage = new signup();
+        this.show(false);
+        signupPage.show(true);
+    }//GEN-LAST:event_signupActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -184,9 +207,11 @@ public class login extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JButton login;
     public static javax.swing.JTextField nameBox;
     private javax.swing.JPasswordField passwordfield;
+    private javax.swing.JButton signup;
     // End of variables declaration//GEN-END:variables
 }
