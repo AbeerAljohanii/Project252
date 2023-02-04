@@ -11,6 +11,7 @@ public class Home extends javax.swing.JFrame {
 
     public Home() {
         initComponents();
+        //make the button(s) transparent 
         exit.setContentAreaFilled(false);
         exit.setOpaque(false);
         cart.setContentAreaFilled(false);
@@ -117,46 +118,48 @@ public class Home extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1434, 1063));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    //open the login frame and close this one 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        login l = new login(); // show login frame
+        login l = new login(); 
         l.show();
     }//GEN-LAST:event_exitActionPerformed
 
     private void cartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartActionPerformed
         Cart cart = new Cart();
-        CartGUI c = new CartGUI();
-        c.jTextArea1.setText("");
-        c.jTextArea1.append(String.format("%-63s %-10s \n", "Item", "Price")); // print in cart frame
-        for (int i = 0; i < cart.getCookie().size(); i++) {
-            c.jTextArea1.append("\n" + cart.getCookie().get(i).information()); // print the order in cart frame
+        CartGUI cartPage = new CartGUI();
+        
+        cartPage.receipt.setText("");//clear the receipt in the cart frame 
+        cartPage.receipt.append(String.format("%-63s %-10s \n", "Item", "Price")); // print in receipt in cart frame
+        for (int i = 0; i < cart.getCookies().size(); i++) {
+            cartPage.receipt.append("\n" + cart.getCookies().get(i).information()); // print the order in cart frame
         }
-        c.jLabel2.setText(String.format("%.2f $", Cart.totalPrice)); // print total in cart frame
-        c.show(); // show Cart frame 
+        //open the cart frame and close this one 
+        cartPage.TotalPrice.setText(String.format("%.2f $", Cart.totalPrice)); // print total in cart frame
+        cartPage.show(); 
         this.show(false);
 
     }//GEN-LAST:event_cartActionPerformed
-
+    //open the ChocolateChip frame and close this one
     private void ChocolateChipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChocolateChipActionPerformed
         ChocolateChipGUI c = new ChocolateChipGUI();
-        c.show(); // show ChocolateChip frame 
+        c.show(); 
         this.show(false);
     }//GEN-LAST:event_ChocolateChipActionPerformed
-
+    //open the PinkVelvet frame and close this one
     private void PinkVelvetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PinkVelvetActionPerformed
-        PinkVelvetGUI p = new PinkVelvetGUI(); // show PinkVelvetGUI frame
+        PinkVelvetGUI p = new PinkVelvetGUI(); 
         p.show();
         this.show(false);
     }//GEN-LAST:event_PinkVelvetActionPerformed
-
+    //open the SunnyDay frame and close this one
     private void SunnyDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SunnyDayActionPerformed
-        SunnyDayGUI s = new SunnyDayGUI(); // show SunnyDayGUI frame
+        SunnyDayGUI s = new SunnyDayGUI(); 
         s.show();
         this.show(false);
     }//GEN-LAST:event_SunnyDayActionPerformed
-
+    //open the BirthdayCake frame and close this one
     private void BirthdayCakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BirthdayCakeActionPerformed
-        BirthdayCakeGUI b = new BirthdayCakeGUI(); // show BirthdayCakeGUI frame
+        BirthdayCakeGUI b = new BirthdayCakeGUI(); 
         b.show();
         this.show(false);
     }//GEN-LAST:event_BirthdayCakeActionPerformed

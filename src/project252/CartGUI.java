@@ -11,6 +11,7 @@ public class CartGUI extends javax.swing.JFrame {
 
     public CartGUI() {
         initComponents();
+        //make the button(s) transparent 
         confirm.setContentAreaFilled(false);
         confirm.setOpaque(false);
         home.setContentAreaFilled(false);
@@ -28,8 +29,8 @@ public class CartGUI extends javax.swing.JFrame {
         home = new javax.swing.JButton();
         exit = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
+        receipt = new javax.swing.JTextArea();
+        TotalPrice = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,16 +65,16 @@ public class CartGUI extends javax.swing.JFrame {
         });
         jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 100, 90));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(null);
-        jScrollPane2.setViewportView(jTextArea1);
+        receipt.setColumns(20);
+        receipt.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        receipt.setRows(5);
+        receipt.setBorder(null);
+        jScrollPane2.setViewportView(receipt);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 750, 630));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 360, 250, 50));
+        TotalPrice.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jPanel1.add(TotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 360, 250, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/cartBackgound.png"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(1478, 1024));
@@ -95,6 +96,7 @@ public class CartGUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         if (Cart.totalPrice == 0) {
             JOptionPane.showMessageDialog(null, "The cart is empty"); //the dialog message is apear then returns to home frame
@@ -109,15 +111,18 @@ public class CartGUI extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_confirmActionPerformed
-
+    //open the home frame and close this one 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        Home h = new Home(); // show 
-        h.show();
+         Home homePage = new Home();
+        homePage.show(true);
+        this.show(false);
     }//GEN-LAST:event_homeActionPerformed
 
+     //open the login frame and close this one 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         login l = new login();
         l.show();
+        this.show(false);
     }//GEN-LAST:event_exitActionPerformed
 
     public static void main(String args[]) {
@@ -154,13 +159,13 @@ public class CartGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel TotalPrice;
     private javax.swing.JButton confirm;
     private javax.swing.JButton exit;
     private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    public javax.swing.JTextArea jTextArea1;
+    public javax.swing.JTextArea receipt;
     // End of variables declaration//GEN-END:variables
 }

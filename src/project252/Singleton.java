@@ -7,12 +7,13 @@ public class Singleton {
     private static Singleton instance = null;
     private static File file = new File("info.txt");
 
-    private Singleton(File file) {
-        this.file = file;
+    private Singleton() {
+
     }
+    //make sure there is only one instance 
     public static Singleton getInstance() {
         if (instance == null) {
-            instance = new Singleton(file);
+            instance = new Singleton();
         }
         return instance;
     }

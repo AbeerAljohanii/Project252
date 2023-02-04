@@ -21,6 +21,7 @@ public class MasterCardGUI extends javax.swing.JFrame {
      */
     public MasterCardGUI() {
         initComponents();
+        //make the button(s) transparent 
         pay.setContentAreaFilled(false); 
         pay.setOpaque(false);
     }
@@ -110,14 +111,14 @@ public class MasterCardGUI extends javax.swing.JFrame {
 
         MasterCard credit = new MasterCard(Number.getText().trim(), Date.getText().trim(), CVV.getText().trim()); // trim the space and send info to MasterCard class
         Context context = new Context(credit); // send the type of payment to context class
-        Confirmed c = new Confirmed();
+        Confirmed confirmFrame = new Confirmed();
         try {
             if (credit.check()) {
                 if (context.ExecuteStrategy(Cart.totalPrice) != null) {
-                    c.jLabel2.setText(credit.pay(Cart.totalPrice));
-                    Cart.cookie.clear();
+                    confirmFrame.confirmMassage.setText(credit.pay(Cart.totalPrice));
+                    Cart.cart.clear();
                     Cart.totalPrice = 0;
-                    c.show(true);
+                    confirmFrame.show(true);
                     this.show(false);
                 } else {
                     JOptionPane.showMessageDialog(null, "The amount is not enough"); // dialog message apear 

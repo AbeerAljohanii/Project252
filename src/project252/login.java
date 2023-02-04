@@ -15,10 +15,11 @@ import javax.swing.JOptionPane;
 public class login extends javax.swing.JFrame {
 
     static boolean flag;
-    static String Sname, Spass;
+    static String name, password;
 
     public login() {
         initComponents();
+        //make the button(s) transparent 
         login.setContentAreaFilled(false);
         login.setOpaque(false);
     }
@@ -29,9 +30,9 @@ public class login extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        password = new javax.swing.JTextField();
+        passwordBox = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        User = new javax.swing.JTextField();
+        nameBox = new javax.swing.JTextField();
         login = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -46,25 +47,25 @@ public class login extends javax.swing.JFrame {
         jLabel2.setText("Password");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 511, 210, 40));
 
-        password.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        password.addActionListener(new java.awt.event.ActionListener() {
+        passwordBox.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        passwordBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordActionPerformed(evt);
+                passwordBoxActionPerformed(evt);
             }
         });
-        jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 560, 250, 40));
+        jPanel1.add(passwordBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 560, 250, 40));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel3.setText("User name");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 400, 170, 40));
 
-        User.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        User.addActionListener(new java.awt.event.ActionListener() {
+        nameBox.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        nameBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserActionPerformed(evt);
+                nameBoxActionPerformed(evt);
             }
         });
-        jPanel1.add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 450, 340, 40));
+        jPanel1.add(nameBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 450, 340, 40));
 
         login.setBackground(new java.awt.Color(255, 218, 218));
         login.setFont(new java.awt.Font("Bookman Old Style", 1, 36)); // NOI18N
@@ -97,20 +98,23 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        if (User.getText().isEmpty() || User.getText().equals("")) {
+        if (nameBox.getText().isEmpty() || nameBox.getText().equals("")) {//check if the user did not enter name 
             JOptionPane.showMessageDialog(null, "The user name is mandatory");
-        } else if (password.getText().isEmpty() || password.getText().equals("")) {
+        } else if (passwordBox.getText().isEmpty() || passwordBox.getText().equals("")) {//check if the user did not enter password 
             JOptionPane.showMessageDialog(null, "The password is mandatory");
         } else {
             try {
-                login(User.getText(), password.getText());
+                login(nameBox.getText(), passwordBox.getText());
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
             }
+            /*if the username and password correct 
+            show the home frame and close this one 
+            else dispaly a massage */
             if (flag) {
-                Home h = new Home();
+                Home homePage = new Home();
                 this.show(false);
-                h.show(true);
+                homePage.show(true);
             } else {
                 JOptionPane.showMessageDialog(null, "Sorry we could not find yout account");
             }
@@ -119,39 +123,40 @@ public class login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_loginActionPerformed
 
-    private void UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserActionPerformed
+    private void nameBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameBoxActionPerformed
 
-    }//GEN-LAST:event_UserActionPerformed
+    }//GEN-LAST:event_nameBoxActionPerformed
 
-    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
+    private void passwordBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordBoxActionPerformed
 
-    }//GEN-LAST:event_passwordActionPerformed
+    }//GEN-LAST:event_passwordBoxActionPerformed
 
+    //check if the username and password valid 
     public void login(String name, String pass) throws FileNotFoundException {
-        Sname = name;
-        Spass = pass;
+        this.name = name;
+        this.password = pass;
 
-        Singleton s = Singleton.getInstance();
-        File F1 = s.getFile(); // Singleton
+        Singleton singleton = Singleton.getInstance();
+        File loginFile = singleton.getFile(); // Singleton
 
-        login l = new login();
-        Scanner input = new Scanner(F1);
+        login login = new login();
+        Scanner input = new Scanner(loginFile);
 
         int size = input.nextInt();
         boolean check = false;
         do {
             String nameFile = input.next();
             String passFile = input.next();
-            if (nameFile.equals(Sname) && passFile.equals(Spass)) {
+            if (nameFile.equals(name) && passFile.equals(password)) {
                 check = true;
             }
             size--;
         } while (size != 0);
-        l.getcheck(check);
+        login.setFlag(check);
         input.close();
     }
 
-    void getcheck(boolean check) {
+    void setFlag(boolean check) {
         flag = check;
     }
 
@@ -165,12 +170,12 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JTextField User;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JButton login;
-    public static javax.swing.JTextField password;
+    public static javax.swing.JTextField nameBox;
+    public static javax.swing.JTextField passwordBox;
     // End of variables declaration//GEN-END:variables
 }

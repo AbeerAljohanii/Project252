@@ -1,9 +1,16 @@
 
 package project252;
 public class CookiesFactory {
-    
-    public Cookies getCookies(String cookies) { 
-        cookies = cookies.toLowerCase();
+    //returns the cookies choosen bey paaing the type as string 
+    /*
+    in this method we check the customer's order to return the type requested 
+    first we check if the request is null if so return null
+    if the string is not null we check the type of the cookie using contains to check if the request contains that type of cookie 
+    when we find the type of the cookie we check if the request contains adding extra then return the cookie chosen
+    */
+    public Cookie getCookies(String cookies) { 
+        
+        cookies = cookies.toLowerCase();//make the request insensative 
         if (cookies == null) {
             return null;
         } else if (cookies.contains("sunny day")) {

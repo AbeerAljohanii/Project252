@@ -1,7 +1,8 @@
 package project252;
 
-public class BirthdayCake extends Cookies {
-
+public class BirthdayCake extends Cookie {
+    
+   //two constructors depend on if the cutomer asks for extra or not 
     public BirthdayCake() {
         super("Birthday Cake", 4.99);
     }

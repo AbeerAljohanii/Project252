@@ -8,6 +8,7 @@ package project252;
 import java.io.FileNotFoundException;
 
 public interface PayStrategy {
+    //methods implemeted in the subclasses 
     String pay(double paymentAmount);    
     boolean check() throws FileNotFoundException ;
 }

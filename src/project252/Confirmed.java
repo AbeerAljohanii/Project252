@@ -9,6 +9,7 @@ public class Confirmed extends javax.swing.JFrame {
     
     public Confirmed() {
         initComponents();
+        //make the button(s) transparent  
         home.setContentAreaFilled(false);
         home.setOpaque(false);
     }
@@ -21,7 +22,7 @@ public class Confirmed extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         home = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        confirmMassage = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -39,8 +40,8 @@ public class Confirmed extends javax.swing.JFrame {
         });
         jPanel1.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 820, 180, 80));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 730, 70));
+        confirmMassage.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jPanel1.add(confirmMassage, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 730, 70));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Confirmed.png"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(1478, 1024));
@@ -61,10 +62,10 @@ public class Confirmed extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    //open the home frame and close this one 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        Home home = new Home();
-        home.show(); // show home frame
+        Home homePage = new Home();
+        homePage.show(true);
         this.show(false);
     }//GEN-LAST:event_homeActionPerformed
     
@@ -101,9 +102,9 @@ public class Confirmed extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel confirmMassage;
     private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

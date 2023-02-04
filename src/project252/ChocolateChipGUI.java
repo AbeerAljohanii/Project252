@@ -15,6 +15,7 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
 
     public ChocolateChipGUI() {
         initComponents();
+        //make the button(s) transparent 
         ADD.setContentAreaFilled(false);
         ADD.setOpaque(false);
         home.setContentAreaFilled(false);
@@ -85,7 +86,7 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(cart, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 20, 120, -1));
+        jPanel1.add(cart, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 20, 120, -1));
 
         home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/home.png"))); // NOI18N
         home.addActionListener(new java.awt.event.ActionListener() {
@@ -135,30 +136,30 @@ public class ChocolateChipGUI extends javax.swing.JFrame {
     private void DarkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DarkActionPerformed
 
     }//GEN-LAST:event_DarkActionPerformed
-
+    //open the home frame and close this one 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        Home h = new Home();  // show home frame
-        h.show(true);
+        Home homePage = new Home();
+        homePage.show(true);
         this.show(false);
     }//GEN-LAST:event_homeActionPerformed
-
+    //open the cart frame and close this one 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        CartGUI c = new CartGUI();  // show home frame
-        c.show(true);
+        CartGUI cartPage = new CartGUI(); 
+        cartPage.show(true);
         this.show(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
         if (without.isSelected()) {
-            Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip")); // add the type of cookies without extra to arraylist in Cart class 
+            Cart.addToCart(Home.cookiesFactory.getCookies("Chocolate Chip")); // add the type of cookies without extra to arraylist in Cart class 
         } else if (white.isSelected()) {
-            Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip with extra white")); // add the type of cookies with white chocolate extra to arraylist in Cart class 
+            Cart.addToCart(Home.cookiesFactory.getCookies("Chocolate Chip with extra white")); // add the type of cookies with white chocolate extra to arraylist in Cart class 
         } else if (Dark.isSelected()){
-            Cart.addarray(Home.cookiesFactory.getCookies("Chocolate Chip with extra dark")); // add the type of cookies with dark chocolate extra to arraylist in Cart class 
+            Cart.addToCart(Home.cookiesFactory.getCookies("Chocolate Chip with extra dark")); // add the type of cookies with dark chocolate extra to arraylist in Cart class 
         }
         this.show(false);
-        Home h = new Home();  // show home frame
-        h.show(true);
+        Home homePage = new Home();
+        homePage.show(true);
     }//GEN-LAST:event_ADDActionPerformed
 
     /**

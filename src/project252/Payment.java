@@ -16,7 +16,7 @@ public class Payment extends javax.swing.JFrame {
      */
     public Payment() {
         initComponents();
-        
+        //make the button(s) transparent 
         enter.setContentAreaFilled(false);
         enter.setOpaque(false);
     }
@@ -93,12 +93,12 @@ public class Payment extends javax.swing.JFrame {
     private void enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterActionPerformed
 
         if (MasterCard.isSelected()) { // if select master, display the MasterCardGUI frame 
-            MasterCardGUI card = new MasterCardGUI();
-            card.show();
+            MasterCardGUI masterCardPage = new MasterCardGUI();
+            masterCardPage.show();
             this.show(false);
         } else if (PayPal.isSelected()) { // if select paypal, display the PayPalGUI frame 
-            PayPalGUI paypal = new PayPalGUI();
-            paypal.show();
+            PayPalGUI paypalPage = new PayPalGUI();
+            paypalPage.show();
             this.show(false);
         }
 

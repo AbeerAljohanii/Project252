@@ -1,6 +1,7 @@
 package project252;
 
-public class SunnyDay extends Cookies {
+public class SunnyDay extends Cookie {
+    //two constructors depend on if the cutomer asks for extra or not 
     public SunnyDay() {
         super("Sunny Day", 4.99);
     }

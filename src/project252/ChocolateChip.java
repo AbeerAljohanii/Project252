@@ -1,8 +1,10 @@
 package project252;
 
-public class ChocolateChip extends Cookies {
-
+public class ChocolateChip extends Cookie {
+    
+    //two constructors depend on if the cutomer asks for extra or not  
     public ChocolateChip() {
+        
         super("Chocolate Chip  ",  3.99);
     }
 
@@ -10,6 +12,7 @@ public class ChocolateChip extends Cookies {
         super("Chocolate Chip with " , 3.99 +extra.getprice()  , extra);
     }
 
+    
     @Override
     String information() {
        if (this.extra == null) {

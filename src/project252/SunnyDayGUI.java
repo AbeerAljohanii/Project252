@@ -16,6 +16,7 @@ public class SunnyDayGUI extends javax.swing.JFrame {
      */
     public SunnyDayGUI() {
         initComponents();
+        //make the button(s) transparent 
         ADD.setContentAreaFilled(false);
         ADD.setOpaque(false);
         home.setContentAreaFilled(false);
@@ -119,30 +120,30 @@ public class SunnyDayGUI extends javax.swing.JFrame {
     private void withoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withoutActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_withoutActionPerformed
-
+    //open the home frame and close this one 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        Home h = new Home(); // show home frame
-        h.show(true);
+        Home homePage = new Home();
+        homePage.show(true);
         this.show(false);
     }//GEN-LAST:event_homeActionPerformed
-
+    //open the cart frame and close this one 
     private void cartjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartjButton3ActionPerformed
-        CartGUI c = new CartGUI(); // show cart frame
-        c.show(true);
+        CartGUI cartPage = new CartGUI(); 
+        cartPage.show(true);
         this.show(false);
     }//GEN-LAST:event_cartjButton3ActionPerformed
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
         if (without.isSelected()) {
-            Cart.addarray(Home.cookiesFactory.getCookies("Sunny Day")); // add the type of cookies without extra to arraylist in Cart class 
+            Cart.addToCart(Home.cookiesFactory.getCookies("Sunny Day")); // add the type of cookies without extra to arraylist in Cart class 
         } else if (white.isSelected()) {
-            Cart.addarray(Home.cookiesFactory.getCookies("Sunny Day with extra white")); // add the type of cookies with white chocolate extra to arraylist in Cart class 
+            Cart.addToCart(Home.cookiesFactory.getCookies("Sunny Day with extra white")); // add the type of cookies with white chocolate extra to arraylist in Cart class 
         } else if (Dark.isSelected()){
-            Cart.addarray(Home.cookiesFactory.getCookies("Sunny Day with extra dark")); // add the type of cookies with dark chocolate extra to arraylist in Cart class 
+            Cart.addToCart(Home.cookiesFactory.getCookies("Sunny Day with extra dark")); // add the type of cookies with dark chocolate extra to arraylist in Cart class 
         }
         this.show(false);
-        Home h = new Home(); // show home frame
-        h.show(true);
+        Home homePage = new Home(); // show home frame
+        homePage.show(true);
     }//GEN-LAST:event_ADDActionPerformed
 
     /**

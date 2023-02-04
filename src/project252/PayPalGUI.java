@@ -21,6 +21,7 @@ public class PayPalGUI extends javax.swing.JFrame {
      */
     public PayPalGUI() {
         initComponents();
+        //make the button(s) transparent 
         pay.setContentAreaFilled(false); 
         pay.setOpaque(false);
     }
@@ -93,15 +94,15 @@ public class PayPalGUI extends javax.swing.JFrame {
     private void payActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payActionPerformed
         PayPal pay = new PayPal(Email.getText().trim(), Password.getText().trim()); // trim the space and send info to PayPal class
         Context context = new Context(pay); // send the type of payment to context class
-        Confirmed c = new Confirmed();
+        Confirmed confirmPage = new Confirmed();
         try {
             if (pay.check()) {
                 if (context.ExecuteStrategy(Cart.totalPrice) != null) {
-                    c.jLabel2.setText(pay.pay(Cart.totalPrice));
-                    Cart.cookie.clear();
+                    confirmPage.confirmMassage.setText(pay.pay(Cart.totalPrice));
+                    Cart.cart.clear();
                     Cart.totalPrice = 0;
                     this.show(false);
-                    c.show(true);
+                    confirmPage.show(true);
                 } else {
                     JOptionPane.showMessageDialog(null, "The amount is not enough"); // dialog message apear 
                     this.show(false);
