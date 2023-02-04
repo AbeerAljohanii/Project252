@@ -30,10 +30,10 @@ public class login extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        passwordBox = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         nameBox = new javax.swing.JTextField();
         login = new javax.swing.JButton();
+        passwordfield = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,14 +46,6 @@ public class login extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel2.setText("Password");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 511, 210, 40));
-
-        passwordBox.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        passwordBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordBoxActionPerformed(evt);
-            }
-        });
-        jPanel1.add(passwordBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 560, 250, 40));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel3.setText("User name");
@@ -77,6 +69,9 @@ public class login extends javax.swing.JFrame {
         });
         jPanel1.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 800, 160, 80));
 
+        passwordfield.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel1.add(passwordfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 560, 210, 40));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/background.png"))); // NOI18N
         jLabel1.setPreferredSize(new java.awt.Dimension(1424, 985));
         jLabel1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -99,20 +94,18 @@ public class login extends javax.swing.JFrame {
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         String name = nameBox.getText();
-        String password = passwordBox.getText();
+        String password = passwordfield.getText();
         if (name.isEmpty() || name.trim().equalsIgnoreCase("")) {//check if the user did not enter name 
             JOptionPane.showMessageDialog(null, "Please Enter Username");
         } else if (password.isEmpty() || password.trim().equalsIgnoreCase("")) {//check if the user did not enter password 
             JOptionPane.showMessageDialog(null, "Please Enter Password");
-        } else if (password.equalsIgnoreCase("") && name.equalsIgnoreCase("")) { // 
+        } else if (password.equalsIgnoreCase("") && name.equalsIgnoreCase("")) { // check if the user and password null
             JOptionPane.showMessageDialog(null, "Please Enter Password and Username");
         } else {
-                //check if the username and password valid 
-
+            //check if the username and password valid 
             try {
                 Singleton singleton = Singleton.getInstance();
                 File loginFile = singleton.getFile(); // Singleton
-
                 Scanner input = new Scanner(loginFile);
 
                 int size = input.nextInt();
@@ -138,7 +131,7 @@ public class login extends javax.swing.JFrame {
                 this.show(false);
                 homePage.show(true);
             } else {
-                JOptionPane.showMessageDialog(null, "Sorry we could not find yout account");
+                JOptionPane.showMessageDialog(null, "Sorry we could not find your account");
             }
         }
 
@@ -147,10 +140,6 @@ public class login extends javax.swing.JFrame {
     private void nameBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameBoxActionPerformed
 
     }//GEN-LAST:event_nameBoxActionPerformed
-
-    private void passwordBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordBoxActionPerformed
-
-    }//GEN-LAST:event_passwordBoxActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -198,6 +187,6 @@ public class login extends javax.swing.JFrame {
     public javax.swing.JPanel jPanel1;
     private javax.swing.JButton login;
     public static javax.swing.JTextField nameBox;
-    private javax.swing.JTextField passwordBox;
+    private javax.swing.JPasswordField passwordfield;
     // End of variables declaration//GEN-END:variables
 }
