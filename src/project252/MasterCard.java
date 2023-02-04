@@ -21,7 +21,7 @@ public class MasterCard implements PayStrategy {
         this.Date = Date;
         this.CVV = CVV;
     }
-    //chekc if the information entered by user are vaild 
+    //check if the information entered by user are vaild 
     public boolean check() throws FileNotFoundException {
         File F = new File("mastercard.txt"); // read info of card from file
         Scanner input = new Scanner(F);

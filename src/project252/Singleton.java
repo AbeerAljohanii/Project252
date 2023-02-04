@@ -8,7 +8,6 @@ public class Singleton {
     private static File file = new File("info.txt");
 
     private Singleton() {
-
     }
     //make sure there is only one instance 
     public static Singleton getInstance() {

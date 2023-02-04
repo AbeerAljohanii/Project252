@@ -1,7 +1,7 @@
 package project252;
 
 public class PinkVelvet extends Cookie {
-    //two constructors depend on if the cutomer asks for extra or not 
+    //two constructors depend on if the cutsomer asks for extra or not 
     public PinkVelvet() {
         super("PinkVelvet", 6.99);
     }

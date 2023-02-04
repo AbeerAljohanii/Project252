@@ -37,7 +37,6 @@ public class BirthdayCakeGUI extends javax.swing.JFrame {
         BirthdayCakeBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1440, 1024));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -79,6 +78,7 @@ public class BirthdayCakeGUI extends javax.swing.JFrame {
 
         ADD.setFont(new java.awt.Font("Bookman Old Style", 1, 36)); // NOI18N
         ADD.setText("ADD");
+        ADD.setBorder(null);
         ADD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ADDActionPerformed(evt);

@@ -6,7 +6,7 @@ public abstract class Cookie {
     private double price;
     protected Extra extra;
     
-    //two constructors depend on if the cutomer asks for extra or not 
+    //two constructors depend on if the customer asks for extra or not 
     public Cookie(String type, double price) {
         this.type = type;
         this.price = price;

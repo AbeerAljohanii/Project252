@@ -98,16 +98,38 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        if (nameBox.getText().isEmpty() || nameBox.getText().equals("")) {//check if the user did not enter name 
-            JOptionPane.showMessageDialog(null, "The user name is mandatory");
-        } else if (passwordBox.getText().isEmpty() || passwordBox.getText().equals("")) {//check if the user did not enter password 
-            JOptionPane.showMessageDialog(null, "The password is mandatory");
+        String name = nameBox.getText();
+        String password = passwordBox.getText();
+        if (name.isEmpty() || name.trim().equalsIgnoreCase("")) {//check if the user did not enter name 
+            JOptionPane.showMessageDialog(null, "Please Enter Username");
+        } else if (password.isEmpty() || password.trim().equalsIgnoreCase("")) {//check if the user did not enter password 
+            JOptionPane.showMessageDialog(null, "Please Enter Password");
+        } else if (password.equalsIgnoreCase("") && name.equalsIgnoreCase("")) { // 
+            JOptionPane.showMessageDialog(null, "Please Enter Password and Username");
         } else {
+                //check if the username and password valid 
+
             try {
-                login(nameBox.getText(), passwordBox.getText());
+                Singleton singleton = Singleton.getInstance();
+                File loginFile = singleton.getFile(); // Singleton
+
+                Scanner input = new Scanner(loginFile);
+
+                int size = input.nextInt();
+                flag = false;
+                do {
+                    String nameFile = input.next();
+                    String passFile = input.next();
+                    if (nameFile.equals(name) && passFile.equals(password)) {
+                        flag = true;
+                    }
+                    size--;
+                } while (size != 0);
+                input.close();
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
             }
+
             /*if the username and password correct 
             show the home frame and close this one 
             else dispaly a massage */
@@ -120,7 +142,6 @@ public class login extends javax.swing.JFrame {
             }
         }
 
-
     }//GEN-LAST:event_loginActionPerformed
 
     private void nameBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameBoxActionPerformed
@@ -131,36 +152,37 @@ public class login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_passwordBoxActionPerformed
 
-    //check if the username and password valid 
-    public void login(String name, String pass) throws FileNotFoundException {
-        this.name = name;
-        this.password = pass;
-
-        Singleton singleton = Singleton.getInstance();
-        File loginFile = singleton.getFile(); // Singleton
-
-        login login = new login();
-        Scanner input = new Scanner(loginFile);
-
-        int size = input.nextInt();
-        boolean check = false;
-        do {
-            String nameFile = input.next();
-            String passFile = input.next();
-            if (nameFile.equals(name) && passFile.equals(password)) {
-                check = true;
-            }
-            size--;
-        } while (size != 0);
-        login.setFlag(check);
-        input.close();
-    }
-
-    void setFlag(boolean check) {
-        flag = check;
-    }
-
     public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -176,6 +198,6 @@ public class login extends javax.swing.JFrame {
     public javax.swing.JPanel jPanel1;
     private javax.swing.JButton login;
     public static javax.swing.JTextField nameBox;
-    public static javax.swing.JTextField passwordBox;
+    private javax.swing.JTextField passwordBox;
     // End of variables declaration//GEN-END:variables
 }

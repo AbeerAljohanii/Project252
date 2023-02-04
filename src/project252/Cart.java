@@ -25,9 +25,4 @@ public class Cart {
       cart.add(c); // add cookies to array list
       totalPrice+=c.getPrice(); // add the price in static total price
     }
-    
-    Cookie typeOfCookies(String type){
-        return factory.getCookies(type); // return the type of cookies that creation from factory class
-    }  
-
 }

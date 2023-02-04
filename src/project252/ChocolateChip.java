@@ -2,7 +2,7 @@ package project252;
 
 public class ChocolateChip extends Cookie {
     
-    //two constructors depend on if the cutomer asks for extra or not  
+    //two constructors depend on if the customer asks for extra or not  
     public ChocolateChip() {
         
         super("Chocolate Chip  ",  3.99);
