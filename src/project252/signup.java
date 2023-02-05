@@ -22,7 +22,8 @@ import javax.swing.JOptionPane;
 public class signup {
    boolean flag ;
    
-   boolean checkSignup(String nameField,String passField,String passConfirmField){
+   boolean isValid(String nameField,String passField,String passConfirmField){
+       
         Singleton singleton = Singleton.getInstance();
         File database = singleton.getFile(); // Singleton
         String name = nameField;
@@ -56,14 +57,14 @@ public class signup {
                      try {
                          FileWriter fileWritter = new FileWriter(database.getName(), true);
                          BufferedWriter bw = new BufferedWriter(fileWritter);
-                         bw.write("\nlogin "+name+" "+password);//write the new username and password to the login file 
+                         bw.write("\nlogin "+name+" "+password);//write the new username and password to the loginGUI file 
                         bw.close();
-                        
+                        return flag;  //retrun true to open home page and close this page 
                         } catch (IOException e) {
                             //exception handling left as an exercise for the reader
                         }
-                     //open home page and close this page 
-                     return flag;
+                    
+                     
                     }
                     else {//the username already taken 
                       JOptionPane.showMessageDialog(null, "already existed username ");  
@@ -72,7 +73,7 @@ public class signup {
                 
                 input.close();
             } catch (FileNotFoundException ex) {
-                Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(loginGUI.class.getName()).log(Level.SEVERE, null, ex);
             
             
         

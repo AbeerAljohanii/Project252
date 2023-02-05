@@ -105,11 +105,11 @@ public class PayPalGUI extends javax.swing.JFrame {
                     confirmPage.show(true);
                 } else {
                     JOptionPane.showMessageDialog(null, "The amount is not enough"); // dialog message apear 
-                    this.show(false);
+                    
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "The account does not found"); // dialog message apear 
-                this.show(false);
+                
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MasterCardGUI.class.getName()).log(Level.SEVERE, null, ex);

@@ -118,9 +118,9 @@ public class CartGUI extends javax.swing.JFrame {
         this.show(false);
     }//GEN-LAST:event_homeActionPerformed
 
-     //open the login frame and close this one 
+     //open the loginGUI frame and close this one 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        login l = new login();
+        loginGUI l = new loginGUI();
         l.show();
         this.show(false);
     }//GEN-LAST:event_exitActionPerformed

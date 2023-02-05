@@ -117,9 +117,9 @@ public class HomeGUI extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1434, 1063));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    //open the login frame and close this one 
+    //open the loginGUI frame and close this one 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        login loginPage = new login(); 
+        loginGUI loginPage = new loginGUI(); 
         loginPage.show();
         this.show(false);
         

@@ -6,14 +6,12 @@
 package project252;
 
 import java.util.ArrayList;
-import javax.swing.JFrame;
 
 public class Cart {
     
     //attributes 
     static ArrayList<Cookie> cart = new ArrayList<>(); //array list contains all the cookies 
     static double totalPrice=0;//total price of the cart 
-    CookiesFactory factory = new CookiesFactory();
     
     //---------------------------------------------------------------------------------------------
     //methods 
@@ -22,14 +20,13 @@ public class Cart {
     public ArrayList<Cookie> getCookies() {
         return cart;
     }
+    
     static void addToCart(Cookie c){
       cart.add(c); // add cookies to array list
       totalPrice+=c.getPrice(); // add the price in static total price
     }
     
     public void PrintReceipt(CartGUI cartPage){
-
-        
         cartPage.receipt.setText("");//clear the receipt in the cart frame 
         cartPage.receipt.append(String.format("%-63s %-10s \n", "Item", "Price")); // print in receipt in cart frame
         for (int i = 0; i < cart.size(); i++) {

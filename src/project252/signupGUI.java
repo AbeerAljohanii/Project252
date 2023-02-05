@@ -5,16 +5,7 @@
  */
 package project252;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -122,68 +113,28 @@ public class signupGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
-     
-        Singleton singleton = Singleton.getInstance();
-        File database = singleton.getFile(); // Singleton
+ 
         String name = nameSpace.getText();
         String password = passwordfield.getText();
         String password2 = passwordfield2.getText();
-        if (name.isEmpty() || name.trim().equalsIgnoreCase("")) {//check if the user did not enter name 
-            JOptionPane.showMessageDialog(null, "Please Enter Username");
-        } else if (password.isEmpty() || password.trim().equalsIgnoreCase("")) {//check if the user did not enter password 
-            JOptionPane.showMessageDialog(null, "Please Enter Password");
-        }else if (password2.isEmpty() || password2.trim().equalsIgnoreCase("")) {//check if the user did not enter password confirmation
-            JOptionPane.showMessageDialog(null, "Please Enter confirmation of the Password");
-        } else if (password.equalsIgnoreCase("") && name.equalsIgnoreCase("")) { // check if the user and password null
-            JOptionPane.showMessageDialog(null, "Please Enter Password and Username");
-             } else if (!password.equals(password2)) { // check if the passwords don't match 
-            JOptionPane.showMessageDialog(null, "passwords don't match");
-        } else {//if all the fields are filled 
-             try {
-                Scanner input = new Scanner(database);
-                flag = true;
-                while(input.hasNext()){
-                    if (input.next().equalsIgnoreCase("login")){
-                    String nameFile = input.next();
-                    String passFile = input.next();
-                    if (nameFile.equals(name)) {//check if the username already exists 
-                        flag = false;
-                        break;
-                    }
-                }
-                }
-                    if (flag){//if the user name doesn't exitsts in the system 
-                     try {
-                         FileWriter fileWritter = new FileWriter(database.getName(), true);
-                         BufferedWriter bw = new BufferedWriter(fileWritter);
-                         bw.write("\nlogin "+name+" "+password);//write the new username and password to the login file 
-                        bw.close();
-                        
-                        } catch (IOException e) {
-                            //exception handling left as an exercise for the reader
-                        }
-                     //open home page and close this page 
-                      HomeGUI homePage = new HomeGUI();
-                      this.show(false);
-                      homePage.show(true);
-                    }
-                    else {//the username already taken 
-                      JOptionPane.showMessageDialog(null, "already existed username ");  
-                    }
-                  
-                
-                input.close();
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
-            
+        signup signupOb = new signup();
+        boolean flag = signupOb.isValid(name, password, password2);
+        if (flag) {
+            //open home page and close this page 
+            HomeGUI homePage = new HomeGUI();
+            this.show(false);
+            homePage.show(true);
+
+        }
+           
             
         
     }//GEN-LAST:event_signupActionPerformed
-             }
-    }
+             
+    
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
-        login loginPage = new login();
+        loginGUI loginPage = new loginGUI();
         this.show(false);
         loginPage.show(true);
         
