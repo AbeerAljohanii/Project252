@@ -123,16 +123,21 @@ public class login extends javax.swing.JFrame {
             //check if the username and password valid 
             try {
                 Singleton singleton = Singleton.getInstance();
-                File loginFile = singleton.getFile(); // Singleton
-                Scanner input = new Scanner(loginFile);
+                File database = singleton.getFile(); // Singleton
+                Scanner input = new Scanner(database);
                 flag = false;
                 while(input.hasNext()){
+                    if(input.next().equalsIgnoreCase("login")){
                     String nameFile = input.next();
                     String passFile = input.next();
                     if (nameFile.equals(name) && passFile.equals(password)) {
                         flag = true;
                     }
                   
+                }
+                    else {
+                       String line = input.nextLine();
+                    }
                 }
                 input.close();
             } catch (FileNotFoundException ex) {
@@ -149,6 +154,9 @@ public class login extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Sorry we could not find your account");
             }
+          
+                    
+                    
         }
 
     }//GEN-LAST:event_loginActionPerformed

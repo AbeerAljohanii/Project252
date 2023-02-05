@@ -5,7 +5,7 @@ import java.io.File;
 public class Singleton {
 
     private static Singleton instance = null;
-    private static File file = new File("info.txt");
+    private static File file = new File("database.txt");
 
     private Singleton() {
     }

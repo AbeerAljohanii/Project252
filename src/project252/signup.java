@@ -123,8 +123,7 @@ public class signup extends javax.swing.JFrame {
 
     private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
       Singleton singleton = Singleton.getInstance();
-                File loginFile = singleton.getFile(); // Singleton
- 
+        File database = singleton.getFile(); // Singleton
         String name = nameSpace.getText();
         String password = passwordfield.getText();
         String password2 = passwordfield2.getText();
@@ -140,9 +139,10 @@ public class signup extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "passwords don't match");
         } else {//if all the fields are filled 
              try {
-                Scanner input = new Scanner(loginFile);
+                Scanner input = new Scanner(database);
                 flag = true;
                 while(input.hasNext()){
+                    if (input.next().equalsIgnoreCase("login")){
                     String nameFile = input.next();
                     String passFile = input.next();
                     if (nameFile.equals(name)) {//check if the username already exists 
@@ -150,11 +150,12 @@ public class signup extends javax.swing.JFrame {
                         break;
                     }
                 }
+                }
                     if (flag){//if the user name doesn't exitsts in the system 
                      try {
-                         FileWriter fileWritter = new FileWriter(loginFile.getName(), true);
+                         FileWriter fileWritter = new FileWriter(database.getName(), true);
                          BufferedWriter bw = new BufferedWriter(fileWritter);
-                         bw.write(name+" "+password+"\n");//write the new username and password to the login file 
+                         bw.write("\nlogin "+name+" "+password);//write the new username and password to the login file 
                         bw.close();
                         
                         } catch (IOException e) {

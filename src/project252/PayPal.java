@@ -15,22 +15,28 @@ public class PayPal implements PayStrategy {
         this.password = password;
     }
     public boolean check() throws FileNotFoundException {
-        File F = new File("paypal.txt"); // read info of card from file
-        Scanner input = new Scanner(F);
-
-        int size = input.nextInt();
-        do {
-            String emailf = input.next();
-            String passwordf = input.next();
-            if (emailf.equals(Email) && passwordf.equals(password)) { // check if it equal to email and password that are invoke from paypal frame 
-                amount = input.nextDouble(); // read the amount from file
-                return true; 
-            } else {
-                amount = input.nextDouble();
-            }
-            size--; 
-        } while (size != 0);
-        return false;
+        Singleton singleton = Singleton.getInstance();
+        File Database = singleton.getFile(); // Singleton
+        Scanner input = new Scanner(Database); 
+         while(input.hasNext()){
+                    if(input.next().equalsIgnoreCase("paypal")){//the next information related to the paypal
+                    String emailFile = input.next();
+                    String passFile = input.next();
+                    if (emailFile.equals(Email) && passFile.equals(password)) {
+                        this.amount = input.nextDouble();
+                        return true;//the information emtered matches the one in the database 
+                    }
+                  else {
+                      double rest= input.nextDouble();
+                }
+                    
+                    
+                }else{
+                        String line = input.nextLine();
+                    }
+         }
+         input.close();
+           return false;//no match 
     }
     @Override
     public String pay(double paymentAmount) {

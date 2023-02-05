@@ -23,23 +23,35 @@ public class MasterCard implements PayStrategy {
     }
     //check if the information entered by user are vaild 
     public boolean check() throws FileNotFoundException {
-        File F = new File("mastercard.txt"); // read info of card from file
-        Scanner input = new Scanner(F);
 
-        int size = input.nextInt();
-        do {
-            String numberf = input.next();
-            String Datef = input.next();
-            String CVVf = input.next();
-            if (numberf.equals(number) && Datef.equals(Datef) && CVVf.equals(CVV)) { // check if it equal to number, date and cvv that are invoke from mastercard frame 
-                amount = input.nextDouble(); // read the amount from file
-                return true;
-            } else {
-                amount = input.nextDouble();
-            }
-            size--;
-        } while (size != 0);
-        return false;
+       // -----------------------------------------------------------------------------------
+         Singleton singleton = Singleton.getInstance();
+        File Database = singleton.getFile(); 
+        Scanner input = new Scanner(Database); // read info of card from file
+         while(input.hasNext()){//the file still have lines 
+                    if(input.next().equalsIgnoreCase("mastercard")){//check if it is the information about mastercard
+                        String numberf = input.next();
+                        String Datef = input.next();
+                        String CVVf = input.next();
+                        // check if it equal to number, date and cvv that are invoke from mastercard frame 
+                   if (numberf.equals(number) && Datef.equals(Datef) && CVVf.equals(CVV)) {
+                       amount = input.nextDouble(); // read the amount from file
+                       return true;//the information emtered matches the one in the database 
+                    }
+                  else {
+                      double rest= input.nextDouble();
+                }
+                    
+                    
+                }String line = input.nextLine();
+         }
+         input.close();
+           return false;//no match 
+    
+        
+        
+        
+        
     }
 
     @Override
