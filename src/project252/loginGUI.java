@@ -98,7 +98,7 @@ public class loginGUI extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setSize(new java.awt.Dimension(1331, 1032));
+        setSize(new java.awt.Dimension(1331, 1014));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
