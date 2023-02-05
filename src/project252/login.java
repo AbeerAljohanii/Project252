@@ -148,7 +148,7 @@ public class login extends javax.swing.JFrame {
             show the home frame and close this one 
             else dispaly a massage */
             if (flag) {
-                Home homePage = new Home();
+                HomeGUI homePage = new HomeGUI();
                 this.show(false);
                 homePage.show(true);
             } else {
@@ -167,7 +167,7 @@ public class login extends javax.swing.JFrame {
 
     private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
         // TODO add your handling code here:
-        signup signupPage = new signup();
+        signupGUI signupPage = new signupGUI();
         this.show(false);
         signupPage.show(true);
     }//GEN-LAST:event_signupActionPerformed
@@ -187,21 +187,22 @@ public class login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Home.class
+            java.util.logging.Logger.getLogger(HomeGUI.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Home.class
+            java.util.logging.Logger.getLogger(HomeGUI.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Home.class
+            java.util.logging.Logger.getLogger(HomeGUI.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Home.class
+            java.util.logging.Logger.getLogger(HomeGUI.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         java.awt.EventQueue.invokeLater(new Runnable() {

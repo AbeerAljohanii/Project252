@@ -8,7 +8,7 @@ public class CookiesFactory {
     if the string is not null we check the type of the cookie using contains to check if the request contains that type of cookie 
     when we find the type of the cookie we check if the request contains adding extra then return the cookie chosen
     */
-    public Cookie getCookies(String cookies) { 
+    public static Cookie getCookies(String cookies) { 
         
         cookies = cookies.toLowerCase();//make the request insensative 
         if (cookies == null) {

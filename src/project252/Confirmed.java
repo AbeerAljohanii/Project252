@@ -64,7 +64,7 @@ public class Confirmed extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     //open the home frame and close this one 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        Home homePage = new Home();
+        HomeGUI homePage = new HomeGUI();
         homePage.show(true);
         this.show(false);
     }//GEN-LAST:event_homeActionPerformed

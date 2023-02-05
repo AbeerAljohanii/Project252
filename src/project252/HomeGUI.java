@@ -5,11 +5,11 @@
  */
 package project252;
 
-public class Home extends javax.swing.JFrame {
+public class HomeGUI extends javax.swing.JFrame {
 
-    static CookiesFactory cookiesFactory = new CookiesFactory();
 
-    public Home() {
+
+    public HomeGUI() {
         initComponents();
         //make the button(s) transparent 
         exit.setContentAreaFilled(false);
@@ -41,7 +41,6 @@ public class Home extends javax.swing.JFrame {
         backgound = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1478, 1024));
         setResizable(false);
 
         jPanel1.setMinimumSize(new java.awt.Dimension(1400, 1024));
@@ -129,14 +128,9 @@ public class Home extends javax.swing.JFrame {
     private void cartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartActionPerformed
         Cart cart = new Cart();
         CartGUI cartPage = new CartGUI();
+        cart.PrintReceipt(cartPage);//print recipt in the cartGUI
+        //open cart page and close this one 
         
-        cartPage.receipt.setText("");//clear the receipt in the cart frame 
-        cartPage.receipt.append(String.format("%-63s %-10s \n", "Item", "Price")); // print in receipt in cart frame
-        for (int i = 0; i < cart.getCookies().size(); i++) {
-            cartPage.receipt.append("\n" + cart.getCookies().get(i).information()); // print the order in cart frame
-        }
-        //open the cart frame and close this one 
-        cartPage.TotalPrice.setText(String.format("%.2f $", Cart.totalPrice)); // print total in cart frame
         cartPage.show(); 
         this.show(false);
 
@@ -180,20 +174,21 @@ public class Home extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomeGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomeGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomeGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomeGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Home().setVisible(true);
+                new HomeGUI().setVisible(true);
             }
         });
     }

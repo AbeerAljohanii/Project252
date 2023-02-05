@@ -122,7 +122,7 @@ public class SunnyDayGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_withoutActionPerformed
     //open the home frame and close this one 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        Home homePage = new Home();
+        HomeGUI homePage = new HomeGUI();
         homePage.show(true);
         this.show(false);
     }//GEN-LAST:event_homeActionPerformed
@@ -135,14 +135,14 @@ public class SunnyDayGUI extends javax.swing.JFrame {
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
         if (without.isSelected()) {
-            Cart.addToCart(Home.cookiesFactory.getCookies("Sunny Day")); // add the type of cookies without extra to arraylist in Cart class 
+            Cart.addToCart(CookiesFactory.getCookies("Sunny Day")); // add the type of cookies without extra to arraylist in Cart class 
         } else if (white.isSelected()) {
-            Cart.addToCart(Home.cookiesFactory.getCookies("Sunny Day with extra white")); // add the type of cookies with white chocolate extra to arraylist in Cart class 
+            Cart.addToCart(CookiesFactory.getCookies("Sunny Day with extra white")); // add the type of cookies with white chocolate extra to arraylist in Cart class 
         } else if (Dark.isSelected()){
-            Cart.addToCart(Home.cookiesFactory.getCookies("Sunny Day with extra dark")); // add the type of cookies with dark chocolate extra to arraylist in Cart class 
+            Cart.addToCart(CookiesFactory.getCookies("Sunny Day with extra dark")); // add the type of cookies with dark chocolate extra to arraylist in Cart class 
         }
         this.show(false);
-        Home homePage = new Home(); // show home frame
+        HomeGUI homePage = new HomeGUI(); // show home frame
         homePage.show(true);
     }//GEN-LAST:event_ADDActionPerformed
 
