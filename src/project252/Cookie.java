@@ -1,11 +1,12 @@
 package project252;
 
 public abstract class Cookie {
+
     //attributes 
     private String type;
     private double price;
     protected Extra extra;
-    
+
     //two constructors depend on if the customer asks for extra or not 
     public Cookie(String type, double price) {
         this.type = type;
@@ -30,8 +31,8 @@ public abstract class Cookie {
     public Extra getExtra() {
         return extra;
     }
-    
+
     //abstact method determin in the subclasses to dispaly the information about cookie
-   abstract String information();
+    abstract String information();
 
 }

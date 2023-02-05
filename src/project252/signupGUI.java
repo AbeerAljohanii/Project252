@@ -5,16 +5,14 @@
  */
 package project252;
 
-
-
 /**
  *
  * @author Lenovo
  */
 public class signupGUI extends javax.swing.JFrame {
 
-   
-    boolean flag ;
+    boolean flag;
+
     public signupGUI() {
         initComponents();
         login.setContentAreaFilled(false);
@@ -114,7 +112,7 @@ public class signupGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
- 
+
         String name = nameSpace.getText();
         String password = passwordfield.getText();
         String password2 = passwordfield2.getText();
@@ -127,24 +125,23 @@ public class signupGUI extends javax.swing.JFrame {
             homePage.show(true);
 
         }
-           
-            
-        
+
+
     }//GEN-LAST:event_signupActionPerformed
-             
-    
+
+
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
         loginGUI loginPage = new loginGUI();
         this.show(false);
         loginPage.show(true);
-        
+
     }//GEN-LAST:event_loginActionPerformed
 
     private void nameSpaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameSpaceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameSpaceActionPerformed
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
